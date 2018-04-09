@@ -33,7 +33,7 @@ namespace DddBasico.Dominio.Comandos.UsuarioCmd
             ErrorMessageResourceName = "NaoEhValido")]
         public Guid? Id { get; set; }
 
-        [NaoPodeSerVazio(
+        [EhRequerido(true,
             ErrorMessageResourceType = typeof(ValidacoesMsg),
             ErrorMessageResourceName = "NaoPodeSerVazio")]
         [MaxLength(50,
@@ -41,7 +41,7 @@ namespace DddBasico.Dominio.Comandos.UsuarioCmd
             ErrorMessageResourceName = "MaximoDeCaracteres")]
         public string Nome { get; set; }
 
-        [NaoPodeSerVazio(
+        [EhRequerido(true,
             ErrorMessageResourceType = typeof(ValidacoesMsg),
             ErrorMessageResourceName = "NaoPodeSerVazio")]
         [MaxLength(100,
@@ -64,7 +64,7 @@ namespace DddBasico.Dominio.Comandos.UsuarioCmd
             ErrorMessageResourceName = "DevemSerIguais")]
         public string ConfirmaEmail { get; set; }
 
-        [NaoPodeSerVazio(
+        [EhRequerido(true,
             ErrorMessageResourceType = typeof(ValidacoesMsg),
             ErrorMessageResourceName = "NaoPodeSerVazio")]
         [MinLength(8,
@@ -83,16 +83,16 @@ namespace DddBasico.Dominio.Comandos.UsuarioCmd
 
         public void Aplicar(ref Usuario dados)
         {
-            if (this.Nome != null)
+            if (!object.Equals(this.Nome, null))
                 dados.Nome = this.Nome;
 
-            if (this.Sobrenome != null)
+            if (!object.Equals(this.Sobrenome, null))
                 dados.Sobrenome = this.Sobrenome;
 
-            if (this.Email != null)
+            if (!object.Equals(this.Email, null))
                 dados.Email = this.Email;
 
-            if (this.Senha != null)
+            if (!object.Equals(this.Senha, null))
                 dados.Senha = this.Senha;
         }
 

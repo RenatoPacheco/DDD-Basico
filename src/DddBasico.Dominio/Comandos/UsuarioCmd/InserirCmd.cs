@@ -23,7 +23,7 @@ namespace DddBasico.Dominio.Comandos.UsuarioCmd
         [Required(
             ErrorMessageResourceType = typeof(ValidacoesMsg),
             ErrorMessageResourceName = "EhObrigatorio")]
-        [NaoPodeSerVazio(
+        [EhRequerido(
             ErrorMessageResourceType = typeof(ValidacoesMsg),
             ErrorMessageResourceName = "NaoPodeSerVazio")]
         [MaxLength(50,
@@ -34,7 +34,7 @@ namespace DddBasico.Dominio.Comandos.UsuarioCmd
         [Required(
             ErrorMessageResourceType = typeof(ValidacoesMsg),
             ErrorMessageResourceName = "EhObrigatorio")]
-        [NaoPodeSerVazio(
+        [EhRequerido(
             ErrorMessageResourceType = typeof(ValidacoesMsg),
             ErrorMessageResourceName = "NaoPodeSerVazio")]
         [MaxLength(100,
@@ -63,7 +63,7 @@ namespace DddBasico.Dominio.Comandos.UsuarioCmd
         [Required(
             ErrorMessageResourceType = typeof(ValidacoesMsg),
             ErrorMessageResourceName = "EhObrigatorio")]
-        [NaoPodeSerVazio(
+        [EhRequerido(
             ErrorMessageResourceType = typeof(ValidacoesMsg),
             ErrorMessageResourceName = "NaoPodeSerVazio")]
         [MinLength(8,

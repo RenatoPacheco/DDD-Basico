@@ -36,6 +36,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -50,7 +51,15 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Dominio\Notacoes\EhRequeridoTeste.cs" />
+    <Compile Include="Dominio\Notacoes\GuidValidoTeste.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\DddBasico.Dominio\DddBasico.Dominio.csproj">
+      <Project>{62821c37-243f-4764-9845-8ac2505903fd}</Project>
+      <Name>DddBasico.Dominio</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

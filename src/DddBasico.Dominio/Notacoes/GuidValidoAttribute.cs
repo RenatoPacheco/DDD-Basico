@@ -8,9 +8,16 @@ using System.Threading.Tasks;
 
 namespace DddBasico.Dominio.Notacoes
 {
-    public class GuidValidoAttribute : ValidationAttribute
+    [AttributeUsage(AttributeTargets.Property |
+        AttributeTargets.Field, AllowMultiple = false)]
+    public class GuidValidoAttribute : Comum.ListaEhValidaAttribute
     {
-        public override bool IsValid(object value)
+        public GuidValidoAttribute()
+        {
+            this.ErrorMessage = "{0} não é um Guid válido";
+        }
+
+        public override bool Check(object value)
         {
             if (object.Equals(value, null))
                 return true;

@@ -63,8 +63,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ValidacoesMsg.resx</DependentUpon>
     </Compile>
+    <Compile Include="Notacoes\Comum\ListaEhValidaAttribute.cs" />
     <Compile Include="Notacoes\GuidValidoAttribute.cs" />
-    <Compile Include="Notacoes\NaoPodeSerVazioAttribute.cs" />
+    <Compile Include="Notacoes\EhRequeridoAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Servicos\Comum\ServicoBase.cs" />
     <Compile Include="Servicos\UsuarioServ.cs" />

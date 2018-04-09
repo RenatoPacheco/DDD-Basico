@@ -63,6 +63,15 @@ namespace DddBasico.Teste.Dominio.Notacoes
             Assert.IsFalse(validar.IsValid(new List<string>() { null }));
         }
 
+        [TestMethod]
+        public void Aprovar_valor_valido_indicando_para_ignorar_nulo_ou_lista_vazia()
+        {
+            EhRequeridoAttribute validar = new EhRequeridoAttribute(true);
+            Assert.IsTrue(validar.IsValid("123"));
+            Assert.IsTrue(validar.IsValid(new string[] { "123" }));
+            Assert.IsTrue(validar.IsValid(new List<string>() { "123" }));
+        }
+
         #endregion
 
         #region Validar sem indicar para ignorar valor nulo
@@ -118,6 +127,15 @@ namespace DddBasico.Teste.Dominio.Notacoes
             EhRequeridoAttribute validar = new EhRequeridoAttribute();
             Assert.IsFalse(validar.IsValid(new string[] { null }));
             Assert.IsFalse(validar.IsValid(new List<string>() { null }));
+        }
+
+        [TestMethod]
+        public void Aprovar_valor_valido()
+        {
+            EhRequeridoAttribute validar = new EhRequeridoAttribute();
+            Assert.IsTrue(validar.IsValid("123"));
+            Assert.IsTrue(validar.IsValid(new string[] { "123" }));
+            Assert.IsTrue(validar.IsValid(new List<string>() { "123" }));
         }
 
         #endregion

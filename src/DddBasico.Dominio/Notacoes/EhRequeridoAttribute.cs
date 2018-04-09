@@ -35,16 +35,18 @@ namespace DddBasico.Dominio.Notacoes
 
         public override bool IsValid(object value)
         {
+            bool haItens = false;
             if (!object.Equals(value, null))
             {
                 if (value is IEnumerable && !(value is string))
                 {
                     foreach (var item in value as IEnumerable)
                     {
+                        haItens = true;
                         if (object.Equals(item, null) || !this.Check(item))
                             return false;
                     }
-                    return this.IgnorarNuloOuListaVazia;
+                    return haItens || this.IgnorarNuloOuListaVazia;
                 }
                 else
                 {

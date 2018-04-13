@@ -31,8 +31,9 @@ namespace DddBasico.Dominio.Servicos
             {
                 comando.Aplicar(ref resultado);
                 this._repUsuario.Inserir(resultado);
+
                 if (!this.Validar(this._repUsuario))
-                    resultado = null;
+                    comando.Desfazer(ref resultado);
             }
 
             return resultado;
@@ -52,8 +53,9 @@ namespace DddBasico.Dominio.Servicos
                 {
                     comando.Aplicar(ref resultado);
                     this._repUsuario.Atualizar(resultado);
+
                     if (!this.Validar(this._repUsuario))
-                        resultado = null;
+                        comando.Desfazer(ref resultado);
                 }
             }
 
@@ -98,8 +100,9 @@ namespace DddBasico.Dominio.Servicos
                 if (this.EhValido())
                 {
                     this._repUsuario.Deletar(resultado);
+
                     if (!this.Validar(this._repUsuario))
-                        resultado = null;
+                        comando.Desfazer(ref resultado);
                 }
             }
 

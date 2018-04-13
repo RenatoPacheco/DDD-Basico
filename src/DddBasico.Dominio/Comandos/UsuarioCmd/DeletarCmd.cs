@@ -1,4 +1,5 @@
 ﻿
+using DddBasico.Dominio.Entidades;
 using System;
 namespace DddBasico.Dominio.Comandos.UsuarioCmd
 {
@@ -9,5 +10,10 @@ namespace DddBasico.Dominio.Comandos.UsuarioCmd
 
         public DeletarCmd(Guid? id)
             : base(id) { }
+
+        public void Desfazer(ref Usuario dados)
+        {
+            dados = null;
+        }
     }
 }

@@ -1,8 +1,7 @@
-﻿
-using DddBasico.Dominio.Interfaces;
-using DddBasico.Dominio.Interfaces.Validacao;
+﻿using DddBasico.Dominio.Interfaces;
 using DddBasico.Dominio.Validacao;
-using System;
+using DddBasico.Dominio.Interfaces.Validacao;
+
 namespace DddBasico.Aplicacao.Comum
 {
     public abstract class ApliccaoBase : IAutoValidacao

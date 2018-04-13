@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Collections.Generic;
 using DddBasico.Dominio.Entidades;
 using DddBasico.Dominio.Interfaces;
-using DddBasico.Dominio.Comandos.Comum;
-using DddBasico.Dominio.Comandos.UsuarioCmd;
 using DddBasico.Dominio.Interfaces.Servicos;
+using DddBasico.Dominio.Comandos.UsuarioCmd;
 using DddBasico.Dominio.Interfaces.Aplicacoes;
 
 namespace DddBasico.Aplicacao
@@ -50,7 +45,7 @@ namespace DddBasico.Aplicacao
             return resultado;
         }
 
-        public Usuario Obter(GuidIdCmd comando)
+        public Usuario Obter(ObterCmd comando)
         {
             this.Notificacoes.Limpar();
             Usuario resultado = null;
@@ -76,7 +71,7 @@ namespace DddBasico.Aplicacao
             return resultado;
         }
 
-        public Usuario Deletar(GuidIdCmd comando)
+        public Usuario Deletar(DeletarCmd comando)
         {
             this.Notificacoes.Limpar();
             Usuario resultado = null;

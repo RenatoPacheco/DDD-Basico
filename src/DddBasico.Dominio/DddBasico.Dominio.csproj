@@ -43,6 +43,8 @@
     <Compile Include="Comandos\Comum\GuidIdCmd.cs" />
     <Compile Include="Comandos\UsuarioCmd\AtualizarCmd.cs" />
     <Compile Include="Comandos\UsuarioCmd\InserirCmd.cs" />
+    <Compile Include="Comandos\UsuarioCmd\DeletarCmd.cs" />
+    <Compile Include="Comandos\UsuarioCmd\ObterCmd.cs" />
     <Compile Include="Entidades\Usuario.cs" />
     <Compile Include="Interfaces\Aplicacoes\IUsuarioApp.cs" />
     <Compile Include="Interfaces\IUnidadedeTrabalho.cs" />

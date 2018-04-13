@@ -4,7 +4,6 @@ using System.Web.Http;
 using System.Net.Http;
 using System.Threading.Tasks;
 using DddBasico.Dominio.Entidades;
-using DddBasico.Dominio.Comandos.Comum;
 using DddBasico.Dominio.Comandos.UsuarioCmd;
 using DddBasico.Dominio.Interfaces.Aplicacoes;
 using DddBasico.Infra.Persistencia.Contextos.Interfaces;
@@ -35,9 +34,9 @@ namespace DddBasico.Api.Controllers
         }
 
         [HttpGet, Route("{id}")]
-        public Task<HttpResponseMessage> Get([FromUri]GuidIdCmd parametros)
+        public Task<HttpResponseMessage> Get([FromUri]ObterCmd parametros)
         {
-            InvocarSeNulo<GuidIdCmd>(ref parametros);
+            InvocarSeNulo<ObterCmd>(ref parametros);
             Usuario resultado = null;
 
             if (this.EhValido())
@@ -99,9 +98,9 @@ namespace DddBasico.Api.Controllers
         }
 
         [HttpDelete, Route("{id}")]
-        public Task<HttpResponseMessage> Delete([FromUri]GuidIdCmd parametros)
+        public Task<HttpResponseMessage> Delete([FromUri]DeletarCmd parametros)
         {
-            InvocarSeNulo<GuidIdCmd>(ref parametros);
+            InvocarSeNulo<DeletarCmd>(ref parametros);
             Usuario resultado = null;
 
             if (this.EhValido())

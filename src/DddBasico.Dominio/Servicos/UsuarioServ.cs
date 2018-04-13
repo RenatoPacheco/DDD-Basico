@@ -45,7 +45,7 @@ namespace DddBasico.Dominio.Servicos
 
             if (this.Validar(comando))
             {
-                resultado = this.Obter(new GuidIdCmd(comando.Id));
+                resultado = this.Obter(new ObterCmd(comando.Id));
                 if(this.EhValido())
                 {
                     comando.Aplicar(ref resultado);
@@ -58,7 +58,7 @@ namespace DddBasico.Dominio.Servicos
             return resultado;
         }
         
-        public Usuario Obter(GuidIdCmd comando)
+        public Usuario Obter(ObterCmd comando)
         {
             this.Notificacoes.Limpar();
             Usuario resultado = null;
@@ -85,14 +85,14 @@ namespace DddBasico.Dominio.Servicos
             return resultado;
         }
 
-        public Usuario Deletar(GuidIdCmd comando)
+        public Usuario Deletar(DeletarCmd comando)
         {
             this.Notificacoes.Limpar();
             Usuario resultado = null;
 
             if (this.Validar(comando))
             {
-                resultado = this.Obter(new GuidIdCmd(comando.Id));
+                resultado = this.Obter(new ObterCmd(comando.Id));
                 if (this.EhValido())
                 {
                     this._repUsuario.Deletar(resultado);

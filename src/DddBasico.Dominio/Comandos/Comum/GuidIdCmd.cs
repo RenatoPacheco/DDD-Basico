@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace DddBasico.Dominio.Comandos.Comum
 {
-    public class GuidIdCmd : IAutoValidacao
+    public abstract class GuidIdCmd : IAutoValidacao
     {
         public GuidIdCmd()
         {

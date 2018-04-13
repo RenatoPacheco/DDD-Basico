@@ -45,7 +45,9 @@ namespace DddBasico.Dominio.Servicos
 
             if (this.Validar(comando))
             {
-                resultado = this.Obter(new ObterCmd(comando.Id));
+                resultado = this._repUsuario.Obter(comando.Id.Value);
+                this.Validar(this._repUsuario);
+
                 if(this.EhValido())
                 {
                     comando.Aplicar(ref resultado);
@@ -66,8 +68,7 @@ namespace DddBasico.Dominio.Servicos
             if(this.Validar(comando))
             {
                 resultado = this._repUsuario.Obter(comando.Id.Value);
-                if (!this.Validar(this._repUsuario))
-                    resultado = null;
+                this.Validar(this._repUsuario);
             }
 
             return resultado;
@@ -79,8 +80,7 @@ namespace DddBasico.Dominio.Servicos
             Usuario[] resultado = null;
 
             resultado = this._repUsuario.Listar();
-            if (!this.Validar(this._repUsuario))
-                resultado = new Usuario[] { };
+            this.Validar(this._repUsuario);
 
             return resultado;
         }
@@ -92,7 +92,9 @@ namespace DddBasico.Dominio.Servicos
 
             if (this.Validar(comando))
             {
-                resultado = this.Obter(new ObterCmd(comando.Id));
+                resultado = this._repUsuario.Obter(comando.Id.Value);
+                this.Validar(this._repUsuario);
+
                 if (this.EhValido())
                 {
                     this._repUsuario.Deletar(resultado);

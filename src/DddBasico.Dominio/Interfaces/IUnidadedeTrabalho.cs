@@ -13,5 +13,7 @@ namespace DddBasico.Dominio.Interfaces
         void SalvarAlteracoes();
 
         void DesfazerAlteracoes();
+
+        bool HaTransicao();
     }
 }

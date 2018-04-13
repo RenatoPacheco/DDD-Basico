@@ -20,19 +20,7 @@ namespace DddBasico.Infra.Persistencia.Contextos
 
         public void Dispose()
         {
-            this.Dispose(true);
-        }
-
-        protected virtual void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                if (this._connexao.HaSessao())
-                    if (this._connexao.HaTransicao())
-                        this._connexao.Dispose();
-
-                GC.SuppressFinalize(this);
-            }
+            GC.SuppressFinalize(this);
         }
 
         public void IniciarTransicao()
@@ -48,6 +36,11 @@ namespace DddBasico.Infra.Persistencia.Contextos
         public void DesfazerAlteracoes()
         {
             this._connexao.DesfazerTransicao();
+        }
+
+        public bool HaTransicao()
+        {
+            return this._connexao.HaTransicao();
         }
     }
 }

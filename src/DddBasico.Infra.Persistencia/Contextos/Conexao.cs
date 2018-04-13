@@ -11,13 +11,31 @@ namespace DddBasico.Infra.Persistencia.Contextos
     {
         public Conexao()
         {
-            DapperExtensions.DapperExtensions.SetMappingAssemblies(new[] { 
-                typeof(UsuarioMap).Assembly 
-            });
             this.Abrir();
         }
 
-        public IDbConnection Sessao { get; private set; }
+        private static bool _bancoMapeado;
+
+        private void MapearBanco()
+        {
+            _bancoMapeado = true;
+            DapperExtensions.DapperExtensions.SetMappingAssemblies(new[] { 
+                typeof(UsuarioMap).Assembly 
+            });
+        }
+
+        private IDbConnection _sessao;
+        public IDbConnection Sessao
+        {
+            get { return this._sessao; }
+            set 
+            {
+                if (!_bancoMapeado)
+                    this.MapearBanco();
+
+                this._sessao = value; 
+            }
+        }
 
         public IDbTransaction Transicao { get; private set; }
 
@@ -34,6 +52,9 @@ namespace DddBasico.Infra.Persistencia.Contextos
 
         public IDbConnection Abrir(string referencia)
         {
+            if (this.Sessao != null)
+                throw new Exception("Não abra uma conexão com uma sessão aberta");
+
             string connectionString = ConfigurationManager.ConnectionStrings[referencia].ConnectionString;
             this.Sessao = new SqlConnection(connectionString);
             this.Sessao.Open();
@@ -44,7 +65,9 @@ namespace DddBasico.Infra.Persistencia.Contextos
         {
             if (this.Sessao != null)
             {
-                this.Sessao.Close();
+                if (this.Sessao.State.Equals(ConnectionState.Open))
+                    this.Sessao.Close();
+                
                 this.Sessao.Dispose();
             }
         }

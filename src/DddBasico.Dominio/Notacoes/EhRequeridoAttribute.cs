@@ -10,9 +10,7 @@ namespace DddBasico.Dominio.Notacoes
     public class EhRequeridoAttribute : ValidationAttribute
     {
         public EhRequeridoAttribute()
-        {
-            this.ErrorMessage = "{0} é obrigatório";
-        }
+            : base("{0} é obrigatório") { }
 
         public EhRequeridoAttribute(bool ignorarNuloOuListaVazia)
             : this()

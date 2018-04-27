@@ -47,8 +47,8 @@
     <Compile Include="Comandos\UsuarioCmd\ObterCmd.cs" />
     <Compile Include="Entidades\Usuario.cs" />
     <Compile Include="Interfaces\Aplicacoes\IUsuarioApp.cs" />
-    <Compile Include="Interfaces\IUnidadedeTrabalho.cs" />
     <Compile Include="Interfaces\Repositorios\Comum\IRepositorio.cs" />
+    <Compile Include="Interfaces\Repositorios\IUnidadeDeTrabalho.cs" />
     <Compile Include="Interfaces\Repositorios\IUsuarioRep.cs" />
     <Compile Include="Interfaces\Servicos\IUsuarioServ.cs" />
     <Compile Include="Interfaces\Validacao\IAutoValidacao.cs" />

@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace DddBasico.Dominio.Interfaces
+namespace DddBasico.Dominio.Interfaces.Repositorios
 {
     public interface IUnidadeDeTrabalho : IDisposable
     {
@@ -14,6 +10,6 @@ namespace DddBasico.Dominio.Interfaces
 
         void DesfazerAlteracoes();
 
-        bool HaTransicao();
+        bool HaAlteracoes();
     }
 }

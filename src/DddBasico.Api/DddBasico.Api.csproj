@@ -130,6 +130,7 @@
     <Compile Include="App_Start\SimpleInjectorConfig.cs" />
     <Compile Include="App_Start\SimpleInjectorCustom\SimpleInjectorServiceLocatorAdapter.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Auxiliares\ResolverConexao.cs" />
     <Compile Include="Controllers\Comum\ApiControllerBase.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Global.asax.cs">

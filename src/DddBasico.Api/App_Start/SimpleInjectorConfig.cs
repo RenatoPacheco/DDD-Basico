@@ -8,6 +8,8 @@ using SimpleInjector.Integration.WebApi;
 using DddBasico.Api.SimpleInjectorCustom;
 using SimpleInjector.Lifestyles;
 using CommonServiceLocator;
+using DddBasico.Api.Auxiliares;
+using DddBasico.Infra.Persistencia.Contextos.Interfaces;
 
 namespace DddBasico.Api
 {
@@ -25,6 +27,9 @@ namespace DddBasico.Api
             
             // This is an extension method from the integration package.
             container.RegisterWebApiControllers(config);
+
+            // Registrando minhas classes api
+            container.Register<IResolverConexao, ResolverConexao>(Lifestyle.Scoped);
 
             container.Verify();
             

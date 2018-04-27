@@ -1,4 +1,5 @@
 ﻿using DddBasico.Dominio.Interfaces;
+using DddBasico.Dominio.Interfaces.Repositorios;
 using DddBasico.Infra.Persistencia.Contextos.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 namespace DddBasico.Infra.Persistencia.Contextos
 {
     public class UnidadeDeTrabalho
-        : IUnidadeDeTrabalho, IDisposable
+        : IUnidadeDeTrabalho
     {
         public UnidadeDeTrabalho(IConexao connexao)
         {
@@ -20,7 +21,15 @@ namespace DddBasico.Infra.Persistencia.Contextos
 
         public void Dispose()
         {
-            GC.SuppressFinalize(this);
+            this.Dispose(true);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                GC.SuppressFinalize(this);
+            }
         }
 
         public void IniciarTransicao()
@@ -38,7 +47,7 @@ namespace DddBasico.Infra.Persistencia.Contextos
             this._connexao.DesfazerTransicao();
         }
 
-        public bool HaTransicao()
+        public bool HaAlteracoes()
         {
             return this._connexao.HaTransicao();
         }

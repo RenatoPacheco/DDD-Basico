@@ -61,7 +61,7 @@ namespace DddBasico.Dominio.Mensagens {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Não foi possível atualizar o registro..
+        ///   Looks up a localized string similar to Não foi possível atualizar o registro.
         /// </summary>
         public static string NaoAtualizado {
             get {
@@ -70,7 +70,7 @@ namespace DddBasico.Dominio.Mensagens {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Não foi possível deletar o registro..
+        ///   Looks up a localized string similar to Não foi possível deletar o registro.
         /// </summary>
         public static string NaoDeletado {
             get {
@@ -79,7 +79,7 @@ namespace DddBasico.Dominio.Mensagens {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nenhum registro foi encontrado..
+        ///   Looks up a localized string similar to Nenhum registro foi encontrado.
         /// </summary>
         public static string NaoEncontrado {
             get {
@@ -88,7 +88,16 @@ namespace DddBasico.Dominio.Mensagens {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Não foi possível inserir o registro..
+        ///   Looks up a localized string similar to Não há uma sessão aberta com o banco de dados.
+        /// </summary>
+        public static string NaoHaSessaoAberta {
+            get {
+                return ResourceManager.GetString("NaoHaSessaoAberta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Não foi possível inserir o registro.
         /// </summary>
         public static string NaoInserido {
             get {

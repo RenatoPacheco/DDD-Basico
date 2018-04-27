@@ -28,6 +28,9 @@ namespace DddBasico.Dominio.Comandos.UsuarioCmd
             this.Sobrenome = dados.Sobrenome;
         }
 
+        [EhRequerido(
+            ErrorMessageResourceType = typeof(ValidacoesMsg),
+            ErrorMessageResourceName = "EhObrigatorio")]
         [GuidValido(
             ErrorMessageResourceType = typeof(ValidacoesMsg),
             ErrorMessageResourceName = "NaoEhValido")]

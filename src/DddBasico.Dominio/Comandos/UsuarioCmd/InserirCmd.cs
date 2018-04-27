@@ -20,30 +20,25 @@ namespace DddBasico.Dominio.Comandos.UsuarioCmd
             this.Notificacoes = new NotificarValidacao();
         }
 
-        [Required(
-            ErrorMessageResourceType = typeof(ValidacoesMsg),
-            ErrorMessageResourceName = "EhObrigatorio")]
         [EhRequerido(
             ErrorMessageResourceType = typeof(ValidacoesMsg),
-            ErrorMessageResourceName = "NaoPodeSerVazio")]
+            ErrorMessageResourceName = "EhObrigatorio")]
         [MaxLength(50,
             ErrorMessageResourceType = typeof(ValidacoesMsg),
             ErrorMessageResourceName = "MaximoDeCaracteres")]
         public string Nome { get; set; }
 
-        [Required(
-            ErrorMessageResourceType = typeof(ValidacoesMsg),
-            ErrorMessageResourceName = "EhObrigatorio")]
         [EhRequerido(
             ErrorMessageResourceType = typeof(ValidacoesMsg),
-            ErrorMessageResourceName = "NaoPodeSerVazio")]
+            ErrorMessageResourceName = "EhObrigatorio")]
         [MaxLength(100,
             ErrorMessageResourceType = typeof(ValidacoesMsg),
             ErrorMessageResourceName = "MaximoDeCaracteres")]
         public string Sobrenome { get; set; }
 
         [Display(Name = "E-mail")]
-        [Required(
+        
+        [EhRequerido(
             ErrorMessageResourceType = typeof(ValidacoesMsg),
             ErrorMessageResourceName = "EhObrigatorio")]
         [EmailAddress(
@@ -60,12 +55,9 @@ namespace DddBasico.Dominio.Comandos.UsuarioCmd
             ErrorMessageResourceName = "DevemSerIguais")]
         public string ConfirmaEmail { get; set; }
 
-        [Required(
-            ErrorMessageResourceType = typeof(ValidacoesMsg),
-            ErrorMessageResourceName = "EhObrigatorio")]
         [EhRequerido(
             ErrorMessageResourceType = typeof(ValidacoesMsg),
-            ErrorMessageResourceName = "NaoPodeSerVazio")]
+            ErrorMessageResourceName = "EhObrigatorio")]
         [MinLength(8,
             ErrorMessageResourceType = typeof(ValidacoesMsg),
             ErrorMessageResourceName = "MinimoDeCaracteres")]

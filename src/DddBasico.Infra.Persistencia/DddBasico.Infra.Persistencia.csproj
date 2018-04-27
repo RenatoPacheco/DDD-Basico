@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="Contextos\Conexao.cs" />
     <Compile Include="Contextos\Interfaces\IConexao.cs" />
+    <Compile Include="Contextos\Interfaces\IResolverConexao.cs" />
     <Compile Include="Contextos\Mapeamento\UsuarioMap.cs" />
     <Compile Include="Contextos\UnidadedeTrabalho.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

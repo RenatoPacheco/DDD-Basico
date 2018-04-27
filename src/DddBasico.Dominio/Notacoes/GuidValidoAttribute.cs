@@ -13,9 +13,7 @@ namespace DddBasico.Dominio.Notacoes
     public class GuidValidoAttribute : Comum.ListaEhValidaAttribute
     {
         public GuidValidoAttribute()
-        {
-            this.ErrorMessage = "{0} não é um Guid válido";
-        }
+            : base("{0} não é um Guid válido") { }
 
         public override bool Check(object value)
         {

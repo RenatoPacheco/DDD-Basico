@@ -61,7 +61,7 @@ namespace DddBasico.Dominio.Mensagens {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0} e {1} devem ser iguais..
+        ///   Looks up a localized string similar to {0} e {1} devem ser iguais.
         /// </summary>
         public static string DevemSerIguais {
             get {
@@ -70,7 +70,7 @@ namespace DddBasico.Dominio.Mensagens {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0} é obrigatoria..
+        ///   Looks up a localized string similar to {0} é obrigatoria.
         /// </summary>
         public static string EhObrigatoria {
             get {
@@ -79,7 +79,7 @@ namespace DddBasico.Dominio.Mensagens {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0} é obrigatório..
+        ///   Looks up a localized string similar to {0} é obrigatório.
         /// </summary>
         public static string EhObrigatorio {
             get {
@@ -88,7 +88,7 @@ namespace DddBasico.Dominio.Mensagens {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0} deve conter no máximo {1} caractéres..
+        ///   Looks up a localized string similar to {0} deve conter no máximo {1} caractéres.
         /// </summary>
         public static string MaximoDeCaracteres {
             get {
@@ -97,7 +97,7 @@ namespace DddBasico.Dominio.Mensagens {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0} deve conter no mínimo {1} caractéres..
+        ///   Looks up a localized string similar to {0} deve conter no mínimo {1} caractéres.
         /// </summary>
         public static string MinimoDeCaracteres {
             get {
@@ -106,7 +106,7 @@ namespace DddBasico.Dominio.Mensagens {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0} não é válida..
+        ///   Looks up a localized string similar to {0} não é válida.
         /// </summary>
         public static string NaoEhValida {
             get {
@@ -115,7 +115,7 @@ namespace DddBasico.Dominio.Mensagens {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0} não é válido..
+        ///   Looks up a localized string similar to {0} não é válido.
         /// </summary>
         public static string NaoEhValido {
             get {
@@ -124,7 +124,7 @@ namespace DddBasico.Dominio.Mensagens {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0} não pode ser vazio..
+        ///   Looks up a localized string similar to {0} não pode ser vazio.
         /// </summary>
         public static string NaoPodeSerVazio {
             get {

@@ -4,7 +4,7 @@ using System.Configuration;
 using System.Data.SqlClient;
 using DddBasico.Infra.Persistencia.Contextos.Interfaces;
 using DddBasico.Infra.Persistencia.Contextos.Mapeamento;
-using DddBasico.Dominio.Mensagens;
+using DddBasico.Infra.Persistencia.Mensagens;
 
 namespace DddBasico.Infra.Persistencia.Contextos
 {

@@ -117,14 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="DataInvalida" xml:space="preserve">
+    <value>{0} não contém uma data válida</value>
+  </data>
   <data name="DevemSerIguais" xml:space="preserve">
     <value>{0} e {1} devem ser iguais</value>
   </data>
-  <data name="EhObrigatoria" xml:space="preserve">
-    <value>{0} é obrigatoria</value>
+  <data name="EhRequerido" xml:space="preserve">
+    <value>{0} é requerido(a)</value>
   </data>
-  <data name="EhObrigatorio" xml:space="preserve">
-    <value>{0} é obrigatório</value>
+  <data name="GuidInvalido" xml:space="preserve">
+    <value>{0} não contém um guid válido</value>
   </data>
   <data name="MaximoDeCaracteres" xml:space="preserve">
     <value>{0} deve conter no máximo {1} caractéres</value>
@@ -132,13 +135,10 @@
   <data name="MinimoDeCaracteres" xml:space="preserve">
     <value>{0} deve conter no mínimo {1} caractéres</value>
   </data>
-  <data name="NaoEhValida" xml:space="preserve">
-    <value>{0} não é válida</value>
-  </data>
   <data name="NaoEhValido" xml:space="preserve">
-    <value>{0} não é válido</value>
+    <value>{0} não é válido(a)</value>
   </data>
   <data name="NaoPodeSerVazio" xml:space="preserve">
-    <value>{0} não pode ser vazio</value>
+    <value>{0} não pode ser vazio(a)</value>
   </data>
 </root>

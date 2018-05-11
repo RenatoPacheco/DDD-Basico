@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DddBasico.Dominio.Mensagens {
+namespace DddBasico.Auxiliares.Mensagens {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace DddBasico.Dominio.Mensagens {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class SqlMsg {
+    public class ValidacaoMsg {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal SqlMsg() {
+        internal ValidacaoMsg() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace DddBasico.Dominio.Mensagens {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("DddBasico.Dominio.Mensagens.SqlMsg", typeof(SqlMsg).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("DddBasico.Auxiliares.Mensagens.ValidacaoMsg", typeof(ValidacaoMsg).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,47 +61,74 @@ namespace DddBasico.Dominio.Mensagens {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Não foi possível atualizar o registro.
+        ///   Looks up a localized string similar to {0} não contém uma data válida.
         /// </summary>
-        public static string NaoAtualizado {
+        public static string DataInvalida {
             get {
-                return ResourceManager.GetString("NaoAtualizado", resourceCulture);
+                return ResourceManager.GetString("DataInvalida", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Não foi possível deletar o registro.
+        ///   Looks up a localized string similar to {0} e {1} devem ser iguais.
         /// </summary>
-        public static string NaoDeletado {
+        public static string DevemSerIguais {
             get {
-                return ResourceManager.GetString("NaoDeletado", resourceCulture);
+                return ResourceManager.GetString("DevemSerIguais", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nenhum registro foi encontrado.
+        ///   Looks up a localized string similar to {0} é requerido(a).
         /// </summary>
-        public static string NaoEncontrado {
+        public static string EhRequerido {
             get {
-                return ResourceManager.GetString("NaoEncontrado", resourceCulture);
+                return ResourceManager.GetString("EhRequerido", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Não há uma sessão aberta com o banco de dados.
+        ///   Looks up a localized string similar to {0} não contém um guid válido.
         /// </summary>
-        public static string NaoHaSessaoAberta {
+        public static string GuidInvalido {
             get {
-                return ResourceManager.GetString("NaoHaSessaoAberta", resourceCulture);
+                return ResourceManager.GetString("GuidInvalido", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Não foi possível inserir o registro.
+        ///   Looks up a localized string similar to {0} deve conter no máximo {1} caractéres.
         /// </summary>
-        public static string NaoInserido {
+        public static string MaximoDeCaracteres {
             get {
-                return ResourceManager.GetString("NaoInserido", resourceCulture);
+                return ResourceManager.GetString("MaximoDeCaracteres", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} deve conter no mínimo {1} caractéres.
+        /// </summary>
+        public static string MinimoDeCaracteres {
+            get {
+                return ResourceManager.GetString("MinimoDeCaracteres", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} não é válido(a).
+        /// </summary>
+        public static string NaoEhValido {
+            get {
+                return ResourceManager.GetString("NaoEhValido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} não pode ser vazio(a).
+        /// </summary>
+        public static string NaoPodeSerVazio {
+            get {
+                return ResourceManager.GetString("NaoPodeSerVazio", resourceCulture);
             }
         }
     }

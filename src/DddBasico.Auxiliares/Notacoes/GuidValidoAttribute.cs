@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DddBasico.Auxiliares.Mensagens;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -13,7 +14,7 @@ namespace DddBasico.Auxiliares.Notacoes
     public class GuidValidoAttribute : Comum.ListaEhValidaAttribute
     {
         public GuidValidoAttribute()
-            : base("{0} não é um Guid válido") { }
+            : base(ValidacaoMsg.GuidInvalido) { }
 
         public override bool Check(object value)
         {

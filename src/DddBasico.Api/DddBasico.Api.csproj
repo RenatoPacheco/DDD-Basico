@@ -124,6 +124,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\DataBindingConfig.cs" />
+    <Compile Include="App_Start\DataBinding\GuidModelBinder.cs" />
     <Compile Include="App_Start\DataBinding\DateTimeModelBinder.cs" />
     <Compile Include="App_Start\JsonConfig.cs" />
     <Compile Include="App_Start\JsonCustom\CustomContractResolver.cs" />
@@ -136,6 +137,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\UsuarioModel\AtualizarModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -150,7 +152,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DddBasico.Aplicacao\DddBasico.Aplicacao.csproj">

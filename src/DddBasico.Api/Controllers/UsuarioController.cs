@@ -4,6 +4,7 @@ using System.Web.Http;
 using System.Net.Http;
 using System.Threading.Tasks;
 using DddBasico.Dominio.Entidades;
+using DddBasico.Api.Models.UsuarioModel;
 using DddBasico.Dominio.Comandos.UsuarioCmd;
 using DddBasico.Dominio.Interfaces.Aplicacoes;
 using DddBasico.Infra.Persistencia.Contextos.Interfaces;
@@ -66,9 +67,9 @@ namespace DddBasico.Api.Controllers
         }
 
         [HttpPut, Route("{id}")]
-        public Task<HttpResponseMessage> Put([FromUri]Guid? id, [FromBody]AtualizarCmd parametros)
+        public Task<HttpResponseMessage> Put([FromUri]Guid? id, [FromBody]AtualizarModel parametros)
         {
-            InvocarSeNulo<AtualizarCmd>(ref parametros);
+            InvocarSeNulo<AtualizarModel>(ref parametros);
             parametros.Id = id;
             Usuario resultado = null;
 
@@ -82,9 +83,9 @@ namespace DddBasico.Api.Controllers
         }
 
         [HttpPatch, Route("{id}")]
-        public Task<HttpResponseMessage> Patch([FromUri]Guid? id, [FromBody]AtualizarCmd parametros)
+        public Task<HttpResponseMessage> Patch([FromUri]Guid? id, [FromBody]AtualizarModel parametros)
         {
-            InvocarSeNulo<AtualizarCmd>(ref parametros);
+            InvocarSeNulo<AtualizarModel>(ref parametros);
             parametros.Id = id;
             Usuario resultado = null;
 

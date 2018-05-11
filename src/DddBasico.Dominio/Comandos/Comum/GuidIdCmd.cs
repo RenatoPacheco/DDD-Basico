@@ -1,5 +1,5 @@
 ﻿using DddBasico.Auxiliares.Interfaces.Validacao;
-using DddBasico.Dominio.Mensagens;
+using DddBasico.Auxiliares.Mensagens;
 using DddBasico.Auxiliares.Notacoes;
 using DddBasico.Auxiliares.Validacao;
 using System;
@@ -22,12 +22,12 @@ namespace DddBasico.Dominio.Comandos.Comum
         }
 
         [Required(
-            ErrorMessageResourceType = typeof(ValidacoesMsg),
-            ErrorMessageResourceName = "EhObrigatorio")]
+            ErrorMessageResourceType = typeof(ValidacaoMsg),
+            ErrorMessageResourceName = "EhRequerido")]
         [GuidValido(
-            ErrorMessageResourceType = typeof(ValidacoesMsg),
+            ErrorMessageResourceType = typeof(ValidacaoMsg),
             ErrorMessageResourceName = "NaoEhValido")]
-        public Guid? Id { get; set; }
+        public virtual Guid? Id { get; set; }
 
         #region AutoValidacao
 

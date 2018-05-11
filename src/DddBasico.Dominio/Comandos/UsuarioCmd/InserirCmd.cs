@@ -4,11 +4,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using DddBasico.Dominio.Entidades;
-using DddBasico.Dominio.Mensagens;
 using DddBasico.Auxiliares.Notacoes;
 using DddBasico.Auxiliares.Validacao;
 using System.ComponentModel.DataAnnotations;
 using DddBasico.Auxiliares.Interfaces.Validacao;
+using DddBasico.Auxiliares.Mensagens;
 
 namespace DddBasico.Dominio.Comandos.UsuarioCmd
 {
@@ -20,64 +20,64 @@ namespace DddBasico.Dominio.Comandos.UsuarioCmd
             this.Notificacoes = new NotificarValidacao();
         }
 
-        [EhRequerido(
-            ErrorMessageResourceType = typeof(ValidacoesMsg),
-            ErrorMessageResourceName = "EhObrigatorio")]
+        [Requerido(
+            ErrorMessageResourceType = typeof(ValidacaoMsg),
+            ErrorMessageResourceName = "EhRequerido")]
         [MaxLength(50,
-            ErrorMessageResourceType = typeof(ValidacoesMsg),
+            ErrorMessageResourceType = typeof(ValidacaoMsg),
             ErrorMessageResourceName = "MaximoDeCaracteres")]
-        public string Nome { get; set; }
+        public virtual string Nome { get; set; }
 
-        [EhRequerido(
-            ErrorMessageResourceType = typeof(ValidacoesMsg),
-            ErrorMessageResourceName = "EhObrigatorio")]
+        [Requerido(
+            ErrorMessageResourceType = typeof(ValidacaoMsg),
+            ErrorMessageResourceName = "EhRequerido")]
         [MaxLength(100,
-            ErrorMessageResourceType = typeof(ValidacoesMsg),
+            ErrorMessageResourceType = typeof(ValidacaoMsg),
             ErrorMessageResourceName = "MaximoDeCaracteres")]
-        public string Sobrenome { get; set; }
+        public virtual string Sobrenome { get; set; }
 
         [Display(Name = "E-mail")]
         
-        [EhRequerido(
-            ErrorMessageResourceType = typeof(ValidacoesMsg),
-            ErrorMessageResourceName = "EhObrigatorio")]
+        [Requerido(
+            ErrorMessageResourceType = typeof(ValidacaoMsg),
+            ErrorMessageResourceName = "EhRequerido")]
         [EmailAddress(
-            ErrorMessageResourceType = typeof(ValidacoesMsg),
+            ErrorMessageResourceType = typeof(ValidacaoMsg),
             ErrorMessageResourceName = "NaoEhValido")]
         [MaxLength(100,
-            ErrorMessageResourceType = typeof(ValidacoesMsg),
+            ErrorMessageResourceType = typeof(ValidacaoMsg),
             ErrorMessageResourceName = "MaximoDeCaracteres")]
-        public string Email { get; set; }
+        public virtual string Email { get; set; }
 
         [Display(Name = "Confirma e-mail")]
         [Compare("Email",
-            ErrorMessageResourceType = typeof(ValidacoesMsg),
+            ErrorMessageResourceType = typeof(ValidacaoMsg),
             ErrorMessageResourceName = "DevemSerIguais")]
-        public string ConfirmaEmail { get; set; }
+        public virtual string ConfirmaEmail { get; set; }
 
-        [EhRequerido(
-            ErrorMessageResourceType = typeof(ValidacoesMsg),
-            ErrorMessageResourceName = "EhObrigatorio")]
+        [Requerido(
+            ErrorMessageResourceType = typeof(ValidacaoMsg),
+            ErrorMessageResourceName = "EhRequerido")]
         [MinLength(8,
-            ErrorMessageResourceType = typeof(ValidacoesMsg),
+            ErrorMessageResourceType = typeof(ValidacaoMsg),
             ErrorMessageResourceName = "MinimoDeCaracteres")]
         [MaxLength(30,
-            ErrorMessageResourceType = typeof(ValidacoesMsg),
+            ErrorMessageResourceType = typeof(ValidacaoMsg),
             ErrorMessageResourceName = "MaximoDeCaracteres")]
-        public string Senha { get; set; }
+        public virtual string Senha { get; set; }
 
         [Display(Name = "Confirma senha")]
         [Compare("Senha",
-            ErrorMessageResourceType = typeof(ValidacoesMsg),
+            ErrorMessageResourceType = typeof(ValidacaoMsg),
             ErrorMessageResourceName = "DevemSerIguais")]
-        public string ConfirmaSenha { get; set; }
+        public virtual string ConfirmaSenha { get; set; }
 
-        public void Aplicar(ref Usuario dados)
+        public virtual void Aplicar(ref Usuario dados)
         {
             dados = new Usuario(this.Nome, this.Sobrenome, this.Email, this.Senha);
         }
 
-        public void Desfazer(ref Usuario dados)
+        public virtual void Desfazer(ref Usuario dados)
         {
             dados = null;
         }

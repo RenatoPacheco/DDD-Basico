@@ -18,6 +18,12 @@ namespace DddBasico.Api
 
             config.Services.Insert(typeof(ModelBinderProvider), 0,
                 new SimpleModelBinderProvider(typeof(DateTime), new DateTimeModelBinder()));
+
+            config.Services.Insert(typeof(ModelBinderProvider), 0,
+                new SimpleModelBinderProvider(typeof(Guid?), new GuidModelBinder()));
+
+            config.Services.Insert(typeof(ModelBinderProvider), 0,
+                new SimpleModelBinderProvider(typeof(Guid), new GuidModelBinder()));
         }
     }
 }

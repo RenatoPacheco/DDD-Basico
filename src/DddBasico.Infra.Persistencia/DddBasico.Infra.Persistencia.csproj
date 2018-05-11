@@ -53,6 +53,11 @@
     <Compile Include="Contextos\Interfaces\IResolverConexao.cs" />
     <Compile Include="Contextos\Mapeamento\UsuarioMap.cs" />
     <Compile Include="Contextos\UnidadedeTrabalho.cs" />
+    <Compile Include="Mensagens\SqlMsg.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SqlMsg.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositorios\Comum\Repositorio.cs" />
     <Compile Include="Repositorios\Comum\RepositorioBase.cs" />
@@ -70,6 +75,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mensagens\SqlMsg.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SqlMsg.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

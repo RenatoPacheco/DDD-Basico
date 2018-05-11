@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DddBasico.Dominio.Mensagens {
+namespace DddBasico.Infra.Persistencia.Mensagens {
     using System;
     
     
@@ -22,24 +22,24 @@ namespace DddBasico.Dominio.Mensagens {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class ValidacoesMsg {
+    internal class SqlMsg {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal ValidacoesMsg() {
+        internal SqlMsg() {
         }
         
         /// <summary>
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Resources.ResourceManager ResourceManager {
+        internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("DddBasico.Dominio.Mensagens.ValidacoesMsg", typeof(ValidacoesMsg).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("DddBasico.Infra.Persistencia.Mensagens.SqlMsg", typeof(SqlMsg).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -51,7 +51,7 @@ namespace DddBasico.Dominio.Mensagens {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Globalization.CultureInfo Culture {
+        internal static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -61,74 +61,47 @@ namespace DddBasico.Dominio.Mensagens {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0} e {1} devem ser iguais.
+        ///   Looks up a localized string similar to Não foi possível atualizar o registro.
         /// </summary>
-        public static string DevemSerIguais {
+        internal static string NaoAtualizado {
             get {
-                return ResourceManager.GetString("DevemSerIguais", resourceCulture);
+                return ResourceManager.GetString("NaoAtualizado", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0} é obrigatoria.
+        ///   Looks up a localized string similar to Não foi possível deletar o registro.
         /// </summary>
-        public static string EhObrigatoria {
+        internal static string NaoDeletado {
             get {
-                return ResourceManager.GetString("EhObrigatoria", resourceCulture);
+                return ResourceManager.GetString("NaoDeletado", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0} é obrigatório.
+        ///   Looks up a localized string similar to Nenhum registro foi encontrado.
         /// </summary>
-        public static string EhObrigatorio {
+        internal static string NaoEncontrado {
             get {
-                return ResourceManager.GetString("EhObrigatorio", resourceCulture);
+                return ResourceManager.GetString("NaoEncontrado", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0} deve conter no máximo {1} caractéres.
+        ///   Looks up a localized string similar to Não há uma sessão aberta com o banco de dados.
         /// </summary>
-        public static string MaximoDeCaracteres {
+        internal static string NaoHaSessaoAberta {
             get {
-                return ResourceManager.GetString("MaximoDeCaracteres", resourceCulture);
+                return ResourceManager.GetString("NaoHaSessaoAberta", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0} deve conter no mínimo {1} caractéres.
+        ///   Looks up a localized string similar to Não foi possível inserir o registro.
         /// </summary>
-        public static string MinimoDeCaracteres {
+        internal static string NaoInserido {
             get {
-                return ResourceManager.GetString("MinimoDeCaracteres", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {0} não é válida.
-        /// </summary>
-        public static string NaoEhValida {
-            get {
-                return ResourceManager.GetString("NaoEhValida", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {0} não é válido.
-        /// </summary>
-        public static string NaoEhValido {
-            get {
-                return ResourceManager.GetString("NaoEhValido", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {0} não pode ser vazio.
-        /// </summary>
-        public static string NaoPodeSerVazio {
-            get {
-                return ResourceManager.GetString("NaoPodeSerVazio", resourceCulture);
+                return ResourceManager.GetString("NaoInserido", resourceCulture);
             }
         }
     }

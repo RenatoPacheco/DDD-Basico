@@ -2,8 +2,7 @@
 using DapperExtensions;
 using DddBasico.Infra.Persistencia.Contextos.Interfaces;
 using DddBasico.Dominio.Interfaces.Repositorios.Comum;
-
-using DddBasico.Dominio.Mensagens;
+using DddBasico.Infra.Persistencia.Mensagens;
 
 namespace DddBasico.Infra.Persistencia.Repositorios.Comum
 {

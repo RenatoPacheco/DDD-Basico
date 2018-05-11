@@ -2,17 +2,18 @@
 using System.Collections;
 using System.Text.RegularExpressions;
 using System.ComponentModel.DataAnnotations;
+using DddBasico.Auxiliares.Mensagens;
 
 namespace DddBasico.Auxiliares.Notacoes
 {
     [AttributeUsage(AttributeTargets.Property |
         AttributeTargets.Field, AllowMultiple = false)]
-    public class EhRequeridoAttribute : ValidationAttribute
+    public class RequeridoAttribute : ValidationAttribute
     {
-        public EhRequeridoAttribute()
-            : base("{0} é obrigatório") { }
-
-        public EhRequeridoAttribute(bool ignorarNuloOuListaVazia)
+        public RequeridoAttribute()
+            : base(ValidacaoMsg.EhRequerido) { }
+        
+        public RequeridoAttribute(bool ignorarNuloOuListaVazia)
             : this()
         {
             this.IgnorarNuloOuListaVazia = ignorarNuloOuListaVazia;

@@ -1,4 +1,4 @@
-﻿using DddBasico.Dominio.Interfaces.Validacao;
+﻿using DddBasico.Auxiliares.Interfaces.Validacao;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DddBasico.Dominio.Validacao
+namespace DddBasico.Auxiliares.Validacao
 {
     public class Validacao<Tipo> : IValidacao<Tipo>
         where Tipo : class

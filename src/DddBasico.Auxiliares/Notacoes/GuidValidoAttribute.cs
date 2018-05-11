@@ -6,7 +6,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace DddBasico.Dominio.Notacoes
+namespace DddBasico.Auxiliares.Notacoes
 {
     [AttributeUsage(AttributeTargets.Property |
         AttributeTargets.Field, AllowMultiple = false)]

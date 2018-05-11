@@ -4,13 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{62821C37-243F-4764-9845-8AC2505903FD}</ProjectGuid>
+    <ProjectGuid>{595B49E1-E236-4494-9126-7729B876F4E4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DddBasico.Dominio</RootNamespace>
-    <AssemblyName>DddBasico.Dominio</AssemblyName>
+    <RootNamespace>DddBasico.Auxiliares</RootNamespace>
+    <AssemblyName>DddBasico.Auxiliares</AssemblyName>
     <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -40,46 +41,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Comandos\Comum\GuidIdCmd.cs" />
-    <Compile Include="Comandos\UsuarioCmd\AtualizarCmd.cs" />
-    <Compile Include="Comandos\UsuarioCmd\InserirCmd.cs" />
-    <Compile Include="Comandos\UsuarioCmd\DeletarCmd.cs" />
-    <Compile Include="Comandos\UsuarioCmd\ObterCmd.cs" />
-    <Compile Include="Entidades\Usuario.cs" />
-    <Compile Include="Interfaces\Aplicacoes\IUsuarioApp.cs" />
-    <Compile Include="Interfaces\Repositorios\Comum\IRepositorio.cs" />
-    <Compile Include="Interfaces\Repositorios\IUnidadeDeTrabalho.cs" />
-    <Compile Include="Interfaces\Repositorios\IUsuarioRep.cs" />
-    <Compile Include="Interfaces\Servicos\IUsuarioServ.cs" />
-    <Compile Include="Mensagens\SqlMsg.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SqlMsg.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Mensagens\ValidacoesMsg.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ValidacoesMsg.resx</DependentUpon>
-    </Compile>
+    <Compile Include="Extensoes\ExpressionExtensao.cs" />
+    <Compile Include="Interfaces\Validacao\IAutoValidacao.cs" />
+    <Compile Include="Interfaces\Validacao\IMensagemDeValidacao.cs" />
+    <Compile Include="Interfaces\Validacao\INotificarValidacao.cs" />
+    <Compile Include="Interfaces\Validacao\IValidacao.cs" />
+    <Compile Include="Notacoes\Comum\ListaEhValidaAttribute.cs" />
+    <Compile Include="Notacoes\EhRequeridoAttribute.cs" />
+    <Compile Include="Notacoes\GuidValidoAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Servicos\Comum\ServicoBase.cs" />
-    <Compile Include="Servicos\UsuarioServ.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Mensagens\SqlMsg.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>SqlMsg.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Mensagens\ValidacoesMsg.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>ValidacoesMsg.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DddBasico.Auxiliares\DddBasico.Auxiliares.csproj">
-      <Project>{595b49e1-e236-4494-9126-7729b876f4e4}</Project>
-      <Name>DddBasico.Auxiliares</Name>
-    </ProjectReference>
+    <Compile Include="Validacao\MensagemDeValidacao.cs" />
+    <Compile Include="Validacao\NotificarValidacao.cs" />
+    <Compile Include="Validacao\TipoDeMensagem.cs" />
+    <Compile Include="Validacao\Validacao.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

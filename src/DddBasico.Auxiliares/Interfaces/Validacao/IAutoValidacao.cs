@@ -1,4 +1,4 @@
-﻿namespace DddBasico.Dominio.Interfaces.Validacao
+﻿namespace DddBasico.Auxiliares.Interfaces.Validacao
 {
     public interface IAutoValidacao
     {

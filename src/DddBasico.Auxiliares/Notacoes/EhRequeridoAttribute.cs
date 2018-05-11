@@ -3,7 +3,7 @@ using System.Collections;
 using System.Text.RegularExpressions;
 using System.ComponentModel.DataAnnotations;
 
-namespace DddBasico.Dominio.Notacoes
+namespace DddBasico.Auxiliares.Notacoes
 {
     [AttributeUsage(AttributeTargets.Property |
         AttributeTargets.Field, AllowMultiple = false)]

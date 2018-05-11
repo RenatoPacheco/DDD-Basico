@@ -2,7 +2,7 @@
 using System.Collections;
 using System.ComponentModel.DataAnnotations;
 
-namespace DddBasico.Dominio.Notacoes.Comum
+namespace DddBasico.Auxiliares.Notacoes.Comum
 {
     public abstract class ListaEhValidaAttribute : ValidationAttribute
     {

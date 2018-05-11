@@ -1,9 +1,9 @@
 ﻿using System;
-using DddBasico.Dominio.Notacoes;
+using DddBasico.Auxiliares.Notacoes;
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace DddBasico.Teste.Dominio.Notacoes
+namespace DddBasico.Teste.Auxiliares.Notacoes
 {
     [TestClass]
     public class GuidValidoTeste

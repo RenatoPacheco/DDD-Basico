@@ -1,5 +1,5 @@
-﻿using DddBasico.Dominio.Interfaces.Validacao;
-using DddBasico.Dominio.Validacao;
+﻿using DddBasico.Auxiliares.Interfaces.Validacao;
+using DddBasico.Auxiliares.Validacao;
 using System;
 using System.Linq;
 using System.Net;

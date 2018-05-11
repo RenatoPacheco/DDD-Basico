@@ -1,11 +1,11 @@
-﻿using DddBasico.Dominio.Interfaces.Validacao;
+﻿using DddBasico.Auxiliares.Interfaces.Validacao;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DddBasico.Dominio.Validacao
+namespace DddBasico.Auxiliares.Validacao
 {
     public class MensagemDeValidacao : IMensagemDeValidacao
     {
@@ -16,15 +16,27 @@ namespace DddBasico.Dominio.Validacao
         }
 
         public MensagemDeValidacao(string mensagem)
-            : this(mensagem, null) { }
+            : this(mensagem, TipoDeMensagem.Erro, null) { }
 
         public MensagemDeValidacao(
-            string mensagem, 
+            string mensagem,
+            string referencia)
+            : this(mensagem, TipoDeMensagem.Erro, referencia) { }
+
+        public MensagemDeValidacao(
+            string mensagem,
+            TipoDeMensagem tipo)
+            : this(mensagem, tipo, null) { }
+
+        public MensagemDeValidacao(
+            string mensagem,
+            TipoDeMensagem tipo, 
             string referencia)
             : this()
         {
             this.Mensagem = mensagem;
             this.Referencia = referencia;
+            this.Tipo = tipo;
         }
 
         public Guid Id { get; private set; }
@@ -34,6 +46,8 @@ namespace DddBasico.Dominio.Validacao
         public string Mensagem { get; private set; }
 
         public string Referencia { get; private set; }
+
+        public TipoDeMensagem Tipo { get; private set; }
 
         #region Operador -------------------------------------
 
@@ -46,7 +60,7 @@ namespace DddBasico.Dominio.Validacao
 
         public override int GetHashCode()
         {
-            return string.Format("[{0}:{1}]", this.Id, typeof(MensagemDeValidacao)).GetHashCode();
+            return string.Format("[{0}:{1}]", this.Id, this.GetType()).GetHashCode();
         }
 
         public static bool operator ==(MensagemDeValidacao a, MensagemDeValidacao b)

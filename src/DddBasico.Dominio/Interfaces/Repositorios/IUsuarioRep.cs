@@ -1,5 +1,5 @@
 ﻿using DddBasico.Dominio.Entidades;
-using DddBasico.Dominio.Interfaces.Validacao;
+using DddBasico.Auxiliares.Interfaces.Validacao;
 using System;
 
 namespace DddBasico.Dominio.Interfaces.Repositorios

@@ -1,10 +1,11 @@
-﻿using System;
+﻿using DddBasico.Auxiliares.Validacao;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DddBasico.Dominio.Interfaces.Validacao
+namespace DddBasico.Auxiliares.Interfaces.Validacao
 {
     public interface IMensagemDeValidacao
     {
@@ -15,5 +16,7 @@ namespace DddBasico.Dominio.Interfaces.Validacao
         string Mensagem { get; }
 
         string Referencia { get; }
+
+        TipoDeMensagem Tipo { get; }
     }
 }

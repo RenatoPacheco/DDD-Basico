@@ -5,10 +5,10 @@ using System.Threading.Tasks;
 using System.Collections.Generic;
 using DddBasico.Dominio.Entidades;
 using DddBasico.Dominio.Mensagens;
-using DddBasico.Dominio.Notacoes;
-using DddBasico.Dominio.Validacao;
+using DddBasico.Auxiliares.Notacoes;
+using DddBasico.Auxiliares.Validacao;
 using System.ComponentModel.DataAnnotations;
-using DddBasico.Dominio.Interfaces.Validacao;
+using DddBasico.Auxiliares.Interfaces.Validacao;
 
 namespace DddBasico.Dominio.Comandos.UsuarioCmd
 {

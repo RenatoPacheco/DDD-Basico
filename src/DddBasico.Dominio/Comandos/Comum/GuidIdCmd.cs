@@ -1,7 +1,7 @@
-﻿using DddBasico.Dominio.Interfaces.Validacao;
+﻿using DddBasico.Auxiliares.Interfaces.Validacao;
 using DddBasico.Dominio.Mensagens;
-using DddBasico.Dominio.Notacoes;
-using DddBasico.Dominio.Validacao;
+using DddBasico.Auxiliares.Notacoes;
+using DddBasico.Auxiliares.Validacao;
 using System;
 using System.ComponentModel.DataAnnotations;
 

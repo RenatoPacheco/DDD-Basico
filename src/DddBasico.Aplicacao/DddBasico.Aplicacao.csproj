@@ -44,6 +44,10 @@
     <Compile Include="UsuarioApp.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DddBasico.Auxiliares\DddBasico.Auxiliares.csproj">
+      <Project>{595b49e1-e236-4494-9126-7729b876f4e4}</Project>
+      <Name>DddBasico.Auxiliares</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DddBasico.Dominio\DddBasico.Dominio.csproj">
       <Project>{62821c37-243f-4764-9845-8ac2505903fd}</Project>
       <Name>DddBasico.Dominio</Name>

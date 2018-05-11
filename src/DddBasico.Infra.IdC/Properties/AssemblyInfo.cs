@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("DddBasico.Infra.CrossCutting.IdC")]
+[assembly: AssemblyTitle("DddBasico.Infra.IdC")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("DddBasico.Infra.CrossCutting.IdC")]
+[assembly: AssemblyProduct("DddBasico.Infra.IdC")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("460ed7a7-5952-4a69-b070-580bcd70fdba")]
+[assembly: Guid("f7566a1c-a545-4dbb-9084-b554a8d02efd")]
 
 // Version information for an assembly consists of the following four values:
 //

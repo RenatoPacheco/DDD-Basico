@@ -1,8 +1,8 @@
 ﻿using SimpleInjector;
 
-namespace DddBasico.Infra.CrossCutting.IdC
+namespace DddBasico.Infra.IdC
 {
-    public static class IdC
+    public static class Injetar
     {
         public static void Carregar(Container recipiente)
         {

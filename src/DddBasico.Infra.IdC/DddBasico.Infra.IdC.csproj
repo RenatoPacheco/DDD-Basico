@@ -4,13 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D8512FB6-52F2-4552-978E-1F68CD985C88}</ProjectGuid>
+    <ProjectGuid>{19E9A15E-9C41-4E17-B9D3-502E07D787A9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DddBasico.Infra.CrossCutting.IdC</RootNamespace>
-    <AssemblyName>DddBasico.Infra.CrossCutting.IdC</AssemblyName>
+    <RootNamespace>DddBasico.Infra.IdC</RootNamespace>
+    <AssemblyName>DddBasico.Infra.IdC</AssemblyName>
     <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -30,8 +31,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="SimpleInjector, Version=4.1.0.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SimpleInjector.4.1.0\lib\net45\SimpleInjector.dll</HintPath>
+    <Reference Include="SimpleInjector, Version=4.2.2.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SimpleInjector.4.2.2\lib\net45\SimpleInjector.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -43,12 +44,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IdC.cs" />
+    <Compile Include="Injetar.cs" />
     <Compile Include="Modulos\AplicacaoModulo.cs" />
     <Compile Include="Modulos\InfraEstruturaModulo.cs" />
     <Compile Include="Modulos\RepositorioModulo.cs" />
     <Compile Include="Modulos\ServicoModulo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DddBasico.Aplicacao\DddBasico.Aplicacao.csproj">
@@ -67,9 +71,6 @@
       <Project>{5d2ecbc0-84e8-4eed-9ccc-6baacfcc61e1}</Project>
       <Name>DddBasico.Infra.Persistencia</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

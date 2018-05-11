@@ -63,12 +63,12 @@
       <HintPath>..\..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="SimpleInjector, Version=4.1.0.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SimpleInjector.4.1.0\lib\net45\SimpleInjector.dll</HintPath>
+    <Reference Include="SimpleInjector, Version=4.2.2.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SimpleInjector.4.2.2\lib\net45\SimpleInjector.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="SimpleInjector.Integration.WebApi, Version=4.1.0.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SimpleInjector.Integration.WebApi.4.1.0\lib\net45\SimpleInjector.Integration.WebApi.dll</HintPath>
+    <Reference Include="SimpleInjector.Integration.WebApi, Version=4.2.2.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SimpleInjector.Integration.WebApi.4.2.2\lib\net45\SimpleInjector.Integration.WebApi.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Net.Http" />
@@ -165,9 +165,9 @@
       <Project>{62821c37-243f-4764-9845-8ac2505903fd}</Project>
       <Name>DddBasico.Dominio</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DddBasico.Infra.CrossCutting.IdC\DddBasico.Infra.CrossCutting.IdC.csproj">
-      <Project>{d8512fb6-52f2-4552-978e-1f68cd985c88}</Project>
-      <Name>DddBasico.Infra.CrossCutting.IdC</Name>
+    <ProjectReference Include="..\DddBasico.Infra.IdC\DddBasico.Infra.IdC.csproj">
+      <Project>{19e9a15e-9c41-4e17-b9d3-502e07d787a9}</Project>
+      <Name>DddBasico.Infra.IdC</Name>
     </ProjectReference>
     <ProjectReference Include="..\DddBasico.Infra.Persistencia\DddBasico.Infra.Persistencia.csproj">
       <Project>{5d2ecbc0-84e8-4eed-9ccc-6baacfcc61e1}</Project>

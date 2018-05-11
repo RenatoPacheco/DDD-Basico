@@ -2,7 +2,7 @@
 using DddBasico.Aplicacao;
 using SimpleInjector;
 
-namespace DddBasico.Infra.CrossCutting.IdC.Modulos
+namespace DddBasico.Infra.IdC.Modulos
 {
     public static class AplicacaoModulo
     {

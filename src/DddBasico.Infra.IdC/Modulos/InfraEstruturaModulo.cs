@@ -3,7 +3,7 @@ using DddBasico.Infra.Persistencia.Contextos;
 using DddBasico.Infra.Persistencia.Contextos.Interfaces;
 using SimpleInjector;
 
-namespace DddBasico.Infra.CrossCutting.IdC.Modulos
+namespace DddBasico.Infra.IdC.Modulos
 {
     public static class InfraEstruturaModulo
     {

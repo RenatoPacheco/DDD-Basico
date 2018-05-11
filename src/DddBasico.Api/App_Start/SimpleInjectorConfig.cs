@@ -22,7 +22,7 @@ namespace DddBasico.Api
             container.Options.DefaultScopedLifestyle = new AsyncScopedLifestyle();
 
             // Register your types, for instance using the scoped lifestyle:
-            DddBasico.Infra.CrossCutting.IdC.IdC.Carregar(container);
+            DddBasico.Infra.IdC.Injetar.Carregar(container);
             // Registrando minhas classes api
             
             // This is an extension method from the integration package.

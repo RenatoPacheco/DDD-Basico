@@ -1,6 +1,6 @@
 ﻿using DddBasico.Dominio.Comandos.UsuarioCmd;
 using DddBasico.Dominio.Entidades;
-using DddBasico.Dominio.Interfaces.Validacao;
+using DddBasico.Auxiliares.Interfaces.Validacao;
 
 namespace DddBasico.Dominio.Interfaces.Aplicacoes
 {

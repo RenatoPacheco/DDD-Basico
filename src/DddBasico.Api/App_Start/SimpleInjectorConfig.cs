@@ -8,6 +8,8 @@ using SimpleInjector.Integration.WebApi;
 using DddBasico.Api.SimpleInjectorCustom;
 using SimpleInjector.Lifestyles;
 using CommonServiceLocator;
+using DddBasico.Api.Auxiliares;
+using DddBasico.Infra.Persistencia.Contextos.Interfaces;
 
 namespace DddBasico.Api
 {
@@ -20,11 +22,14 @@ namespace DddBasico.Api
             container.Options.DefaultScopedLifestyle = new AsyncScopedLifestyle();
 
             // Register your types, for instance using the scoped lifestyle:
-            DddBasico.Infra.CrossCutting.IdC.IdC.Carregar(container);
+            DddBasico.Infra.IdC.Injetar.Carregar(container);
             // Registrando minhas classes api
             
             // This is an extension method from the integration package.
             container.RegisterWebApiControllers(config);
+
+            // Registrando minhas classes api
+            container.Register<IResolverConexao, ResolverConexao>(Lifestyle.Scoped);
 
             container.Verify();
             

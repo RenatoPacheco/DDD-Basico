@@ -63,12 +63,12 @@
       <HintPath>..\..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="SimpleInjector, Version=4.1.0.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SimpleInjector.4.1.0\lib\net45\SimpleInjector.dll</HintPath>
+    <Reference Include="SimpleInjector, Version=4.2.2.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SimpleInjector.4.2.2\lib\net45\SimpleInjector.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="SimpleInjector.Integration.WebApi, Version=4.1.0.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SimpleInjector.Integration.WebApi.4.1.0\lib\net45\SimpleInjector.Integration.WebApi.dll</HintPath>
+    <Reference Include="SimpleInjector.Integration.WebApi, Version=4.2.2.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SimpleInjector.Integration.WebApi.4.2.2\lib\net45\SimpleInjector.Integration.WebApi.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Net.Http" />
@@ -124,17 +124,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\DataBindingConfig.cs" />
+    <Compile Include="App_Start\DataBinding\GuidModelBinder.cs" />
     <Compile Include="App_Start\DataBinding\DateTimeModelBinder.cs" />
     <Compile Include="App_Start\JsonConfig.cs" />
     <Compile Include="App_Start\JsonCustom\CustomContractResolver.cs" />
     <Compile Include="App_Start\SimpleInjectorConfig.cs" />
     <Compile Include="App_Start\SimpleInjectorCustom\SimpleInjectorServiceLocatorAdapter.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Auxiliares\ResolverConexao.cs" />
     <Compile Include="Controllers\Comum\ApiControllerBase.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\UsuarioModel\AtualizarModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -149,20 +152,23 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DddBasico.Aplicacao\DddBasico.Aplicacao.csproj">
       <Project>{df53b972-4eb7-41e2-adae-ea8e71262b77}</Project>
       <Name>DddBasico.Aplicacao</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DddBasico.Auxiliares\DddBasico.Auxiliares.csproj">
+      <Project>{595b49e1-e236-4494-9126-7729b876f4e4}</Project>
+      <Name>DddBasico.Auxiliares</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DddBasico.Dominio\DddBasico.Dominio.csproj">
       <Project>{62821c37-243f-4764-9845-8ac2505903fd}</Project>
       <Name>DddBasico.Dominio</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DddBasico.Infra.CrossCutting.IdC\DddBasico.Infra.CrossCutting.IdC.csproj">
-      <Project>{d8512fb6-52f2-4552-978e-1f68cd985c88}</Project>
-      <Name>DddBasico.Infra.CrossCutting.IdC</Name>
+    <ProjectReference Include="..\DddBasico.Infra.IdC\DddBasico.Infra.IdC.csproj">
+      <Project>{19e9a15e-9c41-4e17-b9d3-502e07d787a9}</Project>
+      <Name>DddBasico.Infra.IdC</Name>
     </ProjectReference>
     <ProjectReference Include="..\DddBasico.Infra.Persistencia\DddBasico.Infra.Persistencia.csproj">
       <Project>{5d2ecbc0-84e8-4eed-9ccc-6baacfcc61e1}</Project>

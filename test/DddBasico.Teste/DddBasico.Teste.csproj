@@ -51,11 +51,15 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Dominio\Notacoes\EhRequeridoTeste.cs" />
-    <Compile Include="Dominio\Notacoes\GuidValidoTeste.cs" />
+    <Compile Include="Auxiliares\Notacoes\EhRequeridoTeste.cs" />
+    <Compile Include="Auxiliares\Notacoes\GuidValidoTeste.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\src\DddBasico.Auxiliares\DddBasico.Auxiliares.csproj">
+      <Project>{595b49e1-e236-4494-9126-7729b876f4e4}</Project>
+      <Name>DddBasico.Auxiliares</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\DddBasico.Dominio\DddBasico.Dominio.csproj">
       <Project>{62821c37-243f-4764-9845-8ac2505903fd}</Project>
       <Name>DddBasico.Dominio</Name>

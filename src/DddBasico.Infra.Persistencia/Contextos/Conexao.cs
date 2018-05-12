@@ -4,17 +4,19 @@ using System.Configuration;
 using System.Data.SqlClient;
 using DddBasico.Infra.Persistencia.Contextos.Interfaces;
 using DddBasico.Infra.Persistencia.Contextos.Mapeamento;
+using DddBasico.Infra.Persistencia.Mensagens;
 
 namespace DddBasico.Infra.Persistencia.Contextos
 {
     public class Conexao : IConexao
     {
-        public Conexao()
+        public Conexao(IResolverConexao resolverConexao)
         {
-            this.Abrir();
+            this._resolverConexao = resolverConexao;
         }
-
+        
         private static bool _bancoMapeado;
+        private readonly IResolverConexao _resolverConexao;
 
         private void MapearBanco()
         {
@@ -27,14 +29,7 @@ namespace DddBasico.Infra.Persistencia.Contextos
         private IDbConnection _sessao;
         public IDbConnection Sessao
         {
-            get { return this._sessao; }
-            set 
-            {
-                if (!_bancoMapeado)
-                    this.MapearBanco();
-
-                this._sessao = value; 
-            }
+            get { return this._sessao ?? this.Abrir(); }
         }
 
         public IDbTransaction Transicao { get; private set; }
@@ -44,37 +39,35 @@ namespace DddBasico.Infra.Persistencia.Contextos
             this.Fechar();
             GC.SuppressFinalize(this);
         }
-
+        
         public IDbConnection Abrir()
         {
-            return this.Abrir("DddBasico");
-        }
+            if (this._sessao != null)
+                throw new Exception(SqlMsg.NaoHaSessaoAberta);
+            
+            if (!_bancoMapeado)
+                this.MapearBanco();
 
-        public IDbConnection Abrir(string referencia)
-        {
-            if (this.Sessao != null)
-                throw new Exception("Não abra uma conexão com uma sessão aberta");
-
-            string connectionString = ConfigurationManager.ConnectionStrings[referencia].ConnectionString;
-            this.Sessao = new SqlConnection(connectionString);
-            this.Sessao.Open();
-            return this.Sessao;
+            string connectionString = this._resolverConexao.ObterConexao();
+            this._sessao = new SqlConnection(connectionString);
+            this._sessao.Open();
+            return this._sessao;
         }
 
         public void Fechar()
         {
-            if (this.Sessao != null)
+            if (this._sessao != null)
             {
-                if (this.Sessao.State.Equals(ConnectionState.Open))
-                    this.Sessao.Close();
-                
-                this.Sessao.Dispose();
+                if (this._sessao.State.Equals(ConnectionState.Open))
+                    this._sessao.Close();
+
+                this._sessao.Dispose();
             }
         }
 
         public bool HaSessao()
         {
-            return !object.Equals(this.Sessao, null);
+            return !object.Equals(this._sessao, null);
         }
 
         public bool HaTransicao()

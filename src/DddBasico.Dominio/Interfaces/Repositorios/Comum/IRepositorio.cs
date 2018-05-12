@@ -1,4 +1,4 @@
-﻿using DddBasico.Dominio.Interfaces.Validacao;
+﻿using DddBasico.Auxiliares.Interfaces.Validacao;
 
 namespace DddBasico.Dominio.Interfaces.Repositorios.Comum
 {

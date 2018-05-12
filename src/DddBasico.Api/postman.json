@@ -1,0 +1,280 @@
+{
+	"info": {
+		"_postman_id": "403a44aa-0e75-4314-a56c-29de7d71f6d8",
+		"name": "DDD Básico",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Usuário",
+			"description": "",
+			"item": [
+				{
+					"name": "Inserir",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "Nome",
+									"value": "Meu Nome",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "Sobrenome",
+									"value": "Meu Sobrenome",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "Email",
+									"value": "meu@email.com",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "ConfirmaEmail",
+									"value": "meu@email.com",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "Senha",
+									"value": "0123456789",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "ConfirmaSenha",
+									"value": "0123456789",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:23197/Api/Usuario",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "23197",
+							"path": [
+								"Api",
+								"Usuario"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:23197/Api/Usuario",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "23197",
+							"path": [
+								"Api",
+								"Usuario"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obter",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:23197/Api/Usuario/9b3a37ff-0209-4ce5-a96f-fe29c56dd6e0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "23197",
+							"path": [
+								"Api",
+								"Usuario",
+								"9b3a37ff-0209-4ce5-a96f-fe29c56dd6e0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "Nome",
+									"value": "Meu Nome",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "Sobrenome",
+									"value": "Meu Sobrenome",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "Email",
+									"value": "meu@email.com",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "ConfirmaEmail",
+									"value": "meu@email.com",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "Senha",
+									"value": "0123456789",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "ConfirmaSenha",
+									"value": "0123456789",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:23197/Api/Usuario/ba89fb55-4270-4399-9a1c-056cbe5c56a6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "23197",
+							"path": [
+								"Api",
+								"Usuario",
+								"ba89fb55-4270-4399-9a1c-056cbe5c56a6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar pacote",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "Nome",
+									"value": "Meu Nome",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "Sobrenome",
+									"value": "Meu Sobrenome",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "Email",
+									"value": "meu@email.com",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "ConfirmaEmail",
+									"value": "meu@email.com",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "Senha",
+									"value": "0123456789",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "ConfirmaSenha",
+									"value": "0123456789",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:23197/Api/Usuario/ba89fb55-4270-4399-9a1c-056cbe5c56a6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "23197",
+							"path": [
+								"Api",
+								"Usuario",
+								"ba89fb55-4270-4399-9a1c-056cbe5c56a6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:23197/Api/Usuario/9b3a37ff-0209-4ce5-a96f-fe29c56dd6e1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "23197",
+							"path": [
+								"Api",
+								"Usuario",
+								"9b3a37ff-0209-4ce5-a96f-fe29c56dd6e1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

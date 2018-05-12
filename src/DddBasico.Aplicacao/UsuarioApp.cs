@@ -1,9 +1,9 @@
 ﻿using System;
 using DddBasico.Dominio.Entidades;
-using DddBasico.Dominio.Interfaces;
 using DddBasico.Dominio.Interfaces.Servicos;
 using DddBasico.Dominio.Comandos.UsuarioCmd;
 using DddBasico.Dominio.Interfaces.Aplicacoes;
+using DddBasico.Dominio.Interfaces.Repositorios;
 
 namespace DddBasico.Aplicacao
 {

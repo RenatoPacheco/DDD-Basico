@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DddBasico.Auxiliares.Mensagens;
+using System;
 using System.Globalization;
 using System.Web.Http.Controllers;
 using System.Web.Http.ModelBinding;
@@ -27,7 +28,7 @@ namespace DddBasico.Api.App_Start.DataBinding
             if (key == null)
             {
                 bindingContext.ModelState.AddModelError(
-                    bindingContext.ModelName, "Tipo de valor errado");
+                    bindingContext.ModelName, string.Format(ValidacaoMsg.DataInvalida, bindingContext.ModelName));
                 return true;
             }
                         
@@ -39,7 +40,7 @@ namespace DddBasico.Api.App_Start.DataBinding
             }        
 
             bindingContext.ModelState.AddModelError(
-            bindingContext.ModelName, string.Format("O Valor '{0}' não é válido.", key));
+            bindingContext.ModelName, string.Format(ValidacaoMsg.DataInvalida, bindingContext.ModelName));
             return true;
         }
 

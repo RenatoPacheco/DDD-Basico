@@ -2,9 +2,9 @@
 using System;
 using System.Linq;
 using DddBasico.Dominio.Entidades;
-using DddBasico.Dominio.Mensagens;
 using DddBasico.Dominio.Interfaces.Repositorios;
 using DddBasico.Infra.Persistencia.Contextos.Interfaces;
+using DddBasico.Infra.Persistencia.Mensagens;
 
 namespace DddBasico.Infra.Persistencia.Repositorios
 {

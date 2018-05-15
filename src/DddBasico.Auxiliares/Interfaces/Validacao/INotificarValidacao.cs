@@ -19,9 +19,13 @@ namespace DddBasico.Auxiliares.Interfaces.Validacao
 
         IMensagemDeValidacao Adicionar(string mensagem, TipoDeMensagem tipo, string referencia);
 
-        IMensagemDeValidacao Adicionar<TClasse>(Expression<Func<TClasse, object>> referencia, string mensagem);
+        IMensagemDeValidacao Adicionar<TClasse>(Expression<Func<TClasse, object>> expressao, string mensagem);
 
-        IMensagemDeValidacao Adicionar<TClasse>(Expression<Func<TClasse, object>> referencia, string mensagem, TipoDeMensagem tipo);
+        IMensagemDeValidacao Adicionar<TClasse>(Expression<Func<TClasse, object>> expressao, string mensagem, string referencia);
+
+        IMensagemDeValidacao Adicionar<TClasse>(Expression<Func<TClasse, object>> expressao, string mensagem, TipoDeMensagem tipo);
+
+        IMensagemDeValidacao Adicionar<TClasse>(Expression<Func<TClasse, object>> expressao, string mensagem, TipoDeMensagem tipo, string referencia);
         
         void Adicionar(IMensagemDeValidacao mensagem);
 
@@ -35,9 +39,11 @@ namespace DddBasico.Auxiliares.Interfaces.Validacao
 
         IMensagemDeValidacao Erro(string mensagem, string referencia);
 
-        IMensagemDeValidacao Erro<TClasse>(Expression<Func<TClasse, object>> referencia);
+        IMensagemDeValidacao Erro<TClasse>(Expression<Func<TClasse, object>> expressao);
 
-        IMensagemDeValidacao Erro<TClasse>(Expression<Func<TClasse, object>> referencia, string mensagem);
+        IMensagemDeValidacao Erro<TClasse>(Expression<Func<TClasse, object>> expressao, string mensagem);
+
+        IMensagemDeValidacao Erro<TClasse>(Expression<Func<TClasse, object>> expressao, string mensagem, string referencia);
 
         #endregion
 
@@ -47,9 +53,11 @@ namespace DddBasico.Auxiliares.Interfaces.Validacao
 
         IMensagemDeValidacao Sucesso(string mensagem, string referencia);
 
-        IMensagemDeValidacao Sucesso<TClasse>(Expression<Func<TClasse, object>> referencia);
+        IMensagemDeValidacao Sucesso<TClasse>(Expression<Func<TClasse, object>> expressao);
 
-        IMensagemDeValidacao Sucesso<TClasse>(Expression<Func<TClasse, object>> referencia, string mensagem);
+        IMensagemDeValidacao Sucesso<TClasse>(Expression<Func<TClasse, object>> expressao, string mensagem);
+
+        IMensagemDeValidacao Sucesso<TClasse>(Expression<Func<TClasse, object>> expressao, string mensagem, string referencia);
 
         #endregion
 
@@ -59,9 +67,11 @@ namespace DddBasico.Auxiliares.Interfaces.Validacao
 
         IMensagemDeValidacao Atencao(string mensagem, string referencia);
 
-        IMensagemDeValidacao Atencao<TClasse>(Expression<Func<TClasse, object>> referencia);
+        IMensagemDeValidacao Atencao<TClasse>(Expression<Func<TClasse, object>> expressao);
 
-        IMensagemDeValidacao Atencao<TClasse>(Expression<Func<TClasse, object>> referencia, string mensagem);
+        IMensagemDeValidacao Atencao<TClasse>(Expression<Func<TClasse, object>> expressao, string mensagem);
+
+        IMensagemDeValidacao Atencao<TClasse>(Expression<Func<TClasse, object>> expressao, string mensagem, string referencia);
 
         #endregion
 

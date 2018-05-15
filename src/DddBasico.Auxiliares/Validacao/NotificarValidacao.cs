@@ -1,11 +1,11 @@
-﻿using DddBasico.Auxiliares.Interfaces.Validacao;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Linq;
-using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
+using System.Linq.Expressions;
+using System.Collections.Generic;
 using DddBasico.Auxiliares.Extensoes;
+using DddBasico.Auxiliares.Interfaces.Validacao;
 
 namespace DddBasico.Auxiliares.Validacao
 {
@@ -17,20 +17,20 @@ namespace DddBasico.Auxiliares.Validacao
         }
 
         private IList<IMensagemDeValidacao> _mensagens;
-
+        
         public IMensagemDeValidacao[] Mensagens
         {
-            get { return this._mensagens.ToArray(); }
+            get { return (new List<IMensagemDeValidacao>()).Concat(this._mensagens).ToArray(); }
         }
 
         public bool EhValido()
         {
-            return this.EhValido(TipoDeMensagem.Erro);
+            return !this.HaMensagens(TipoDeMensagem.Erro);
         }
 
-        public bool EhValido(params TipoDeMensagem[] tipos)
+        public bool HaMensagens(params TipoDeMensagem[] tipos)
         {
-            return this._mensagens.Where(x => tipos.Contains(x.Tipo)).Take(1).Count().Equals(0);
+            return this._mensagens.Where(x => tipos.Contains(x.Tipo)).Take(1).Count().Equals(1);
         }
 
         #region Adicionar
@@ -74,14 +74,98 @@ namespace DddBasico.Auxiliares.Validacao
                 .Concat(autoValidacao.Notificacoes.Mensagens).ToList();
         }
 
-        public IMensagemDeValidacao Adicionar<TClasse>(string mensagem, Expression<Func<TClasse, object>> referencia)
+        public IMensagemDeValidacao Adicionar<TClasse>(Expression<Func<TClasse, object>> referencia, string mensagem)
         {
             return this.Adicionar(mensagem, referencia.PropExtensoComTrilha());
         }
 
-        public IMensagemDeValidacao Adicionar<TClasse>(string mensagem, TipoDeMensagem tipo, Expression<Func<TClasse, object>> referencia)
+        public IMensagemDeValidacao Adicionar<TClasse>(Expression<Func<TClasse, object>> referencia, string mensagem, TipoDeMensagem tipo)
         {
             return this.Adicionar(mensagem, tipo, referencia.PropExtensoComTrilha());
+        }
+
+        #endregion
+
+        #region Erro
+
+        public IMensagemDeValidacao Erro(string mensagem)
+        {
+            IMensagemDeValidacao resultado = new MensagemDeValidacao(mensagem);
+            this._mensagens.Add(resultado);
+            return resultado;
+        }
+
+        public IMensagemDeValidacao Erro(string mensagem, string referencia)
+        {
+            IMensagemDeValidacao resultado = new MensagemDeValidacao(mensagem, referencia);
+            this._mensagens.Add(resultado);
+            return resultado;
+        }
+
+        public IMensagemDeValidacao Erro<TClasse>(Expression<Func<TClasse, object>> referencia)
+        {
+            return this.Adicionar("{0} não é válido", referencia.PropExtensoComTrilha());
+        }
+
+        public IMensagemDeValidacao Erro<TClasse>(Expression<Func<TClasse, object>> referencia, string mensagem)
+        {
+            return this.Adicionar(mensagem, referencia.PropExtensoComTrilha());
+        }
+
+        #endregion
+
+        #region Sucesso
+
+        public IMensagemDeValidacao Sucesso(string mensagem)
+        {
+            IMensagemDeValidacao resultado = new MensagemDeValidacao(mensagem, TipoDeMensagem.Sucesso);
+            this._mensagens.Add(resultado);
+            return resultado;
+        }
+
+        public IMensagemDeValidacao Sucesso(string mensagem, string referencia)
+        {
+            IMensagemDeValidacao resultado = new MensagemDeValidacao(mensagem, TipoDeMensagem.Sucesso, referencia);
+            this._mensagens.Add(resultado);
+            return resultado;
+        }
+
+        public IMensagemDeValidacao Sucesso<TClasse>(Expression<Func<TClasse, object>> referencia)
+        {
+            return this.Adicionar("{0} é válido", TipoDeMensagem.Sucesso, referencia.PropExtensoComTrilha());
+        }
+
+        public IMensagemDeValidacao Sucesso<TClasse>(Expression<Func<TClasse, object>> referencia, string mensagem)
+        {
+            return this.Adicionar(mensagem, TipoDeMensagem.Sucesso, referencia.PropExtensoComTrilha());
+        }
+
+        #endregion
+
+        #region Atencao
+
+        public IMensagemDeValidacao Atencao(string mensagem)
+        {
+            IMensagemDeValidacao resultado = new MensagemDeValidacao(mensagem, TipoDeMensagem.Atencao);
+            this._mensagens.Add(resultado);
+            return resultado;
+        }
+
+        public IMensagemDeValidacao Atencao(string mensagem, string referencia)
+        {
+            IMensagemDeValidacao resultado = new MensagemDeValidacao(mensagem, TipoDeMensagem.Atencao, referencia);
+            this._mensagens.Add(resultado);
+            return resultado;
+        }
+
+        public IMensagemDeValidacao Atencao<TClasse>(Expression<Func<TClasse, object>> referencia)
+        {
+            return this.Adicionar("{0} teve problemas, mas é válido", TipoDeMensagem.Atencao, referencia.PropExtensoComTrilha());
+        }
+
+        public IMensagemDeValidacao Atencao<TClasse>(Expression<Func<TClasse, object>> referencia, string mensagem)
+        {
+            return this.Adicionar(mensagem, TipoDeMensagem.Atencao, referencia.PropExtensoComTrilha());
         }
 
         #endregion
@@ -108,6 +192,8 @@ namespace DddBasico.Auxiliares.Validacao
 
         #endregion
 
+        #region Limpar
+
         public void Limpar()
         {
             this._mensagens.Clear();
@@ -117,6 +203,8 @@ namespace DddBasico.Auxiliares.Validacao
         {
             this._mensagens = this._mensagens.Where(
                 x => !tipos.Contains(x.Tipo)).ToList();
-        }        
+        }
+
+        #endregion
     }
 }

@@ -8,8 +8,8 @@ namespace DddBasico.Auxiliares.Interfaces.Validacao
         IMensagemDeValidacao[] Mensagens { get; }
 
         bool EhValido();
-
-        bool EhValido(params TipoDeMensagem[] tipos);
+        
+        #region Adicionar
 
         IMensagemDeValidacao Adicionar(string mensagem);
 
@@ -19,13 +19,51 @@ namespace DddBasico.Auxiliares.Interfaces.Validacao
 
         IMensagemDeValidacao Adicionar(string mensagem, TipoDeMensagem tipo, string referencia);
 
-        IMensagemDeValidacao Adicionar<TClasse>(string mensagem, Expression<Func<TClasse, object>> referencia);
+        IMensagemDeValidacao Adicionar<TClasse>(Expression<Func<TClasse, object>> referencia, string mensagem);
 
-        IMensagemDeValidacao Adicionar<TClasse>(string mensagem, TipoDeMensagem tipo, Expression<Func<TClasse, object>> referencia);
+        IMensagemDeValidacao Adicionar<TClasse>(Expression<Func<TClasse, object>> referencia, string mensagem, TipoDeMensagem tipo);
         
         void Adicionar(IMensagemDeValidacao mensagem);
 
         void Adicionar(IAutoValidacao autoValidacao);
+
+        #endregion
+
+        #region Erro
+
+        IMensagemDeValidacao Erro(string mensagem);
+
+        IMensagemDeValidacao Erro(string mensagem, string referencia);
+
+        IMensagemDeValidacao Erro<TClasse>(Expression<Func<TClasse, object>> referencia);
+
+        IMensagemDeValidacao Erro<TClasse>(Expression<Func<TClasse, object>> referencia, string mensagem);
+
+        #endregion
+
+        #region Sucesso
+
+        IMensagemDeValidacao Sucesso(string mensagem);
+
+        IMensagemDeValidacao Sucesso(string mensagem, string referencia);
+
+        IMensagemDeValidacao Sucesso<TClasse>(Expression<Func<TClasse, object>> referencia);
+
+        IMensagemDeValidacao Sucesso<TClasse>(Expression<Func<TClasse, object>> referencia, string mensagem);
+
+        #endregion
+
+        #region Atencao
+
+        IMensagemDeValidacao Atencao(string mensagem);
+
+        IMensagemDeValidacao Atencao(string mensagem, string referencia);
+
+        IMensagemDeValidacao Atencao<TClasse>(Expression<Func<TClasse, object>> referencia);
+
+        IMensagemDeValidacao Atencao<TClasse>(Expression<Func<TClasse, object>> referencia, string mensagem);
+
+        #endregion
 
         void Remover(IMensagemDeValidacao mensagem);
 

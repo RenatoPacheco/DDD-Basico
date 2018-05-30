@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 using System.Linq.Expressions;
 using System.Collections.Generic;
 using DddBasico.Auxiliares.Extensoes;
-using DddBasico.Auxiliares.Interfaces.Validacao;
 using System.Text.RegularExpressions;
+using DddBasico.Auxiliares.Interfaces.Validacao;
 
 namespace DddBasico.Auxiliares.Validacao
 {
@@ -29,9 +29,14 @@ namespace DddBasico.Auxiliares.Validacao
             return !this.HaMensagens(TipoDeMensagem.Erro);
         }
 
-        public bool HaMensagens(params TipoDeMensagem[] tipos)
+        private bool HaMensagens(params TipoDeMensagem[] tipos)
         {
             return this._mensagens.Where(x => tipos.Contains(x.Tipo)).Take(1).Count().Equals(1);
+        }
+
+        private IMensagemDeValidacao[] ObterMensagens(params TipoDeMensagem[] tipos)
+        {
+            return this._mensagens.Where(x => tipos.Contains(x.Tipo)).ToArray();
         }
 
         #region Adicionar
@@ -75,6 +80,14 @@ namespace DddBasico.Auxiliares.Validacao
                 .Concat(autoValidacao.Notificacoes.Mensagens).ToList();
         }
 
+        public void Adicionar(INotificarValidacao notificacao)
+        {
+            IMensagemDeValidacao[] mensagens = notificacao.Mensagens;
+            int total = mensagens.Count();
+            for (int i = 0; i < total; i++)
+                this._mensagens.Add(mensagens[i]);
+        }
+
         public IMensagemDeValidacao Adicionar<TClasse>(Expression<Func<TClasse, object>> expressao, string mensagem)
         {
             mensagem = Regex.Replace(mensagem, @"\{0\}", expressao.PropNome());
@@ -105,6 +118,16 @@ namespace DddBasico.Auxiliares.Validacao
 
         #region Erro
 
+        public void LimparErro()
+        {
+            this.Limpar(TipoDeMensagem.Erro);
+        }
+
+        public IMensagemDeValidacao[] ObterErro()
+        {
+            return this.ObterMensagens(TipoDeMensagem.Erro);
+        }
+
         public IMensagemDeValidacao Erro(string mensagem)
         {
             return this.Adicionar(mensagem, TipoDeMensagem.Erro);
@@ -134,6 +157,16 @@ namespace DddBasico.Auxiliares.Validacao
 
         #region Sucesso
 
+        public void LimparSucesso()
+        {
+            this.Limpar(TipoDeMensagem.Sucesso);
+        }
+
+        public IMensagemDeValidacao[] ObterSucesso()
+        {
+            return this.ObterMensagens(TipoDeMensagem.Sucesso);
+        }
+
         public IMensagemDeValidacao Sucesso(string mensagem)
         {
             return this.Adicionar(mensagem, TipoDeMensagem.Sucesso);
@@ -162,6 +195,16 @@ namespace DddBasico.Auxiliares.Validacao
         #endregion
 
         #region Atencao
+
+        public void LimparAtencao()
+        {
+            this.Limpar(TipoDeMensagem.Atencao);
+        }
+
+        public IMensagemDeValidacao[] ObterAtencao()
+        {
+            return this.ObterMensagens(TipoDeMensagem.Atencao);
+        }
 
         public IMensagemDeValidacao Atencao(string mensagem)
         {
@@ -219,7 +262,7 @@ namespace DddBasico.Auxiliares.Validacao
             this._mensagens.Clear();
         }
 
-        public void Limpar(params TipoDeMensagem[] tipos)
+        private void Limpar(params TipoDeMensagem[] tipos)
         {
             this._mensagens = this._mensagens.Where(
                 x => !tipos.Contains(x.Tipo)).ToList();

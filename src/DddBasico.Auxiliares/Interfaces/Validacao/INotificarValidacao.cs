@@ -1,6 +1,7 @@
-﻿using DddBasico.Auxiliares.Validacao;
-using System;
+﻿using System;
 using System.Linq.Expressions;
+using DddBasico.Auxiliares.Validacao;
+
 namespace DddBasico.Auxiliares.Interfaces.Validacao
 {
     public interface INotificarValidacao
@@ -31,6 +32,8 @@ namespace DddBasico.Auxiliares.Interfaces.Validacao
 
         void Adicionar(IAutoValidacao autoValidacao);
 
+        void Adicionar(INotificarValidacao notificacao);
+
         #endregion
 
         #region Erro
@@ -44,6 +47,10 @@ namespace DddBasico.Auxiliares.Interfaces.Validacao
         IMensagemDeValidacao Erro<TClasse>(Expression<Func<TClasse, object>> expressao, string mensagem);
 
         IMensagemDeValidacao Erro<TClasse>(Expression<Func<TClasse, object>> expressao, string mensagem, string referencia);
+
+        IMensagemDeValidacao[] ObterErro();
+
+        void LimparErro();
 
         #endregion
 
@@ -59,6 +66,10 @@ namespace DddBasico.Auxiliares.Interfaces.Validacao
 
         IMensagemDeValidacao Sucesso<TClasse>(Expression<Func<TClasse, object>> expressao, string mensagem, string referencia);
 
+        IMensagemDeValidacao[] ObterSucesso();
+
+        void LimparSucesso();
+
         #endregion
 
         #region Atencao
@@ -73,6 +84,10 @@ namespace DddBasico.Auxiliares.Interfaces.Validacao
 
         IMensagemDeValidacao Atencao<TClasse>(Expression<Func<TClasse, object>> expressao, string mensagem, string referencia);
 
+        IMensagemDeValidacao[] ObterAtencao();
+
+        void LimparAtencao();
+
         #endregion
 
         void Remover(IMensagemDeValidacao mensagem);
@@ -82,7 +97,5 @@ namespace DddBasico.Auxiliares.Interfaces.Validacao
         void Remover(string referencia);
 
         void Limpar();
-
-        void Limpar(params TipoDeMensagem[] tipos);
     }
 }

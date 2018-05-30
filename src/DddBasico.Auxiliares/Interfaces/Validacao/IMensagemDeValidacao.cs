@@ -1,9 +1,5 @@
-﻿using DddBasico.Auxiliares.Validacao;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
+using DddBasico.Auxiliares.Validacao;
 
 namespace DddBasico.Auxiliares.Interfaces.Validacao
 {

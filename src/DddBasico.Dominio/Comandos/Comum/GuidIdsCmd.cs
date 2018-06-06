@@ -3,22 +3,31 @@ using DddBasico.Auxiliares.Mensagens;
 using DddBasico.Auxiliares.Notacoes;
 using DddBasico.Auxiliares.Validacao;
 using System;
+using System.Linq;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace DddBasico.Dominio.Comandos.Comum
 {
-    public abstract class GuidIdCmd : IAutoValidacao
+    public abstract class GuidIdsCmd : IAutoValidacao
     {
-        public GuidIdCmd()
+        public GuidIdsCmd()
         {
-            this._validacao = new Validacao<GuidIdCmd>();
+            this.Ids = new List<Guid>();
+            this._validacao = new Validacao<GuidIdsCmd>();
             this.Notificacoes = new NotificarValidacao();
         }
 
-        public GuidIdCmd(Guid? id)
+        public GuidIdsCmd(Guid id)
             : this()
         {
-            this.Id = id;
+            this.Ids.Add(id);
+        }
+
+        public GuidIdsCmd(IEnumerable<Guid> ids)
+            : this()
+        {
+            this.Ids = this.Ids.Concat(ids).ToList();
         }
 
         [Required(
@@ -27,11 +36,11 @@ namespace DddBasico.Dominio.Comandos.Comum
         [GuidValido(
             ErrorMessageResourceType = typeof(ValidacaoMsg),
             ErrorMessageResourceName = ValidacaoNomeMsg.NaoEhValido)]
-        public virtual Guid? Id { get; set; }
+        public virtual IList<Guid> Ids { get; set; }
 
         #region AutoValidacao
 
-        private readonly IValidacao<GuidIdCmd> _validacao;
+        private readonly IValidacao<GuidIdsCmd> _validacao;
 
         public INotificarValidacao Notificacoes { get; private set; }
 

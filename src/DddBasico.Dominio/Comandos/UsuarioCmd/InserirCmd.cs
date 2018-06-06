@@ -22,54 +22,54 @@ namespace DddBasico.Dominio.Comandos.UsuarioCmd
 
         [Requerido(
             ErrorMessageResourceType = typeof(ValidacaoMsg),
-            ErrorMessageResourceName = "EhRequerido")]
+            ErrorMessageResourceName = ValidacaoNomeMsg.EhRequerido)]
         [MaxLength(50,
             ErrorMessageResourceType = typeof(ValidacaoMsg),
-            ErrorMessageResourceName = "MaximoDeCaracteres")]
+            ErrorMessageResourceName = ValidacaoNomeMsg.MaximoDeCaracteres)]
         public virtual string Nome { get; set; }
 
         [Requerido(
             ErrorMessageResourceType = typeof(ValidacaoMsg),
-            ErrorMessageResourceName = "EhRequerido")]
+            ErrorMessageResourceName = ValidacaoNomeMsg.EhRequerido)]
         [MaxLength(100,
             ErrorMessageResourceType = typeof(ValidacaoMsg),
-            ErrorMessageResourceName = "MaximoDeCaracteres")]
+            ErrorMessageResourceName = ValidacaoNomeMsg.MaximoDeCaracteres)]
         public virtual string Sobrenome { get; set; }
 
         [Display(Name = "E-mail")]
         
         [Requerido(
             ErrorMessageResourceType = typeof(ValidacaoMsg),
-            ErrorMessageResourceName = "EhRequerido")]
+            ErrorMessageResourceName = ValidacaoNomeMsg.EhRequerido)]
         [EmailAddress(
             ErrorMessageResourceType = typeof(ValidacaoMsg),
-            ErrorMessageResourceName = "NaoEhValido")]
+            ErrorMessageResourceName = ValidacaoNomeMsg.NaoEhValido)]
         [MaxLength(100,
             ErrorMessageResourceType = typeof(ValidacaoMsg),
-            ErrorMessageResourceName = "MaximoDeCaracteres")]
+            ErrorMessageResourceName = ValidacaoNomeMsg.MaximoDeCaracteres)]
         public virtual string Email { get; set; }
 
         [Display(Name = "Confirma e-mail")]
         [Compare("Email",
             ErrorMessageResourceType = typeof(ValidacaoMsg),
-            ErrorMessageResourceName = "DevemSerIguais")]
+            ErrorMessageResourceName = ValidacaoNomeMsg.DevemSerIguais)]
         public virtual string ConfirmaEmail { get; set; }
 
         [Requerido(
             ErrorMessageResourceType = typeof(ValidacaoMsg),
-            ErrorMessageResourceName = "EhRequerido")]
+            ErrorMessageResourceName = ValidacaoNomeMsg.EhRequerido)]
         [MinLength(8,
             ErrorMessageResourceType = typeof(ValidacaoMsg),
-            ErrorMessageResourceName = "MinimoDeCaracteres")]
+            ErrorMessageResourceName = ValidacaoNomeMsg.MinimoDeCaracteres)]
         [MaxLength(30,
             ErrorMessageResourceType = typeof(ValidacaoMsg),
-            ErrorMessageResourceName = "MaximoDeCaracteres")]
+            ErrorMessageResourceName = ValidacaoNomeMsg.MaximoDeCaracteres)]
         public virtual string Senha { get; set; }
 
         [Display(Name = "Confirma senha")]
         [Compare("Senha",
             ErrorMessageResourceType = typeof(ValidacaoMsg),
-            ErrorMessageResourceName = "DevemSerIguais")]
+            ErrorMessageResourceName = ValidacaoNomeMsg.DevemSerIguais)]
         public virtual string ConfirmaSenha { get; set; }
 
         public virtual void Aplicar(ref Usuario dados)

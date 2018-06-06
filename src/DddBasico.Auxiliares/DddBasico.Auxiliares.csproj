@@ -51,6 +51,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ValidacaoMsg.resx</DependentUpon>
     </Compile>
+    <Compile Include="Mensagens\ValidacaoNomeMsg.cs" />
     <Compile Include="Notacoes\Comum\ListaEhValidaAttribute.cs" />
     <Compile Include="Notacoes\RequeridoAttribute.cs" />
     <Compile Include="Notacoes\GuidValidoAttribute.cs" />

@@ -1,11 +1,7 @@
-﻿using DddBasico.Dominio.Interfaces;
+﻿using System;
+using DddBasico.Dominio.Interfaces;
 using DddBasico.Dominio.Interfaces.Repositorios;
 using DddBasico.Infra.Persistencia.Contextos.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DddBasico.Infra.Persistencia.Contextos
 {
@@ -21,15 +17,11 @@ namespace DddBasico.Infra.Persistencia.Contextos
 
         public void Dispose()
         {
-            this.Dispose(true);
-        }
+            if (this._connexao.HaSessao())
+                if (this._connexao.HaTransicao())
+                    this.SalvarAlteracoes();
 
-        protected virtual void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                GC.SuppressFinalize(this);
-            }
+            GC.SuppressFinalize(this);
         }
 
         public void IniciarTransicao()

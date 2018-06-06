@@ -117,11 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="HaSessaoAberta" xml:space="preserve">
+    <value>Já exite uma sessão aberta com o banco de dados</value>
+  </data>
   <data name="NaoAtualizado" xml:space="preserve">
-    <value>Não foi possível atualizar o registro</value>
+    <value>Não foi possível atualizar o(s) registro(s)</value>
   </data>
   <data name="NaoDeletado" xml:space="preserve">
-    <value>Não foi possível deletar o registro</value>
+    <value>Não foi possível deletar o(s) registro(s)</value>
   </data>
   <data name="NaoEncontrado" xml:space="preserve">
     <value>Nenhum registro foi encontrado</value>
@@ -130,6 +133,6 @@
     <value>Não há uma sessão aberta com o banco de dados</value>
   </data>
   <data name="NaoInserido" xml:space="preserve">
-    <value>Não foi possível inserir o registro</value>
+    <value>Não foi possível inserir o(s) registro(s)</value>
   </data>
 </root>

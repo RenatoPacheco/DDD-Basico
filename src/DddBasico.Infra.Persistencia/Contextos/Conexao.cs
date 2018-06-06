@@ -2,9 +2,9 @@
 using System.Data;
 using System.Configuration;
 using System.Data.SqlClient;
+using DddBasico.Infra.Persistencia.Mensagens;
 using DddBasico.Infra.Persistencia.Contextos.Interfaces;
 using DddBasico.Infra.Persistencia.Contextos.Mapeamento;
-using DddBasico.Infra.Persistencia.Mensagens;
 
 namespace DddBasico.Infra.Persistencia.Contextos
 {
@@ -43,7 +43,7 @@ namespace DddBasico.Infra.Persistencia.Contextos
         public IDbConnection Abrir()
         {
             if (this._sessao != null)
-                throw new Exception(SqlMsg.NaoHaSessaoAberta);
+                throw new Exception(SqlMsg.HaSessaoAberta);
             
             if (!_bancoMapeado)
                 this.MapearBanco();

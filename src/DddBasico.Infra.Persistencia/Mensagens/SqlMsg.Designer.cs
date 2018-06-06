@@ -61,7 +61,16 @@ namespace DddBasico.Infra.Persistencia.Mensagens {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Não foi possível atualizar o registro.
+        ///   Looks up a localized string similar to Já exite uma sessão aberta com o banco de dados.
+        /// </summary>
+        internal static string HaSessaoAberta {
+            get {
+                return ResourceManager.GetString("HaSessaoAberta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Não foi possível atualizar o(s) registro(s).
         /// </summary>
         internal static string NaoAtualizado {
             get {
@@ -70,7 +79,7 @@ namespace DddBasico.Infra.Persistencia.Mensagens {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Não foi possível deletar o registro.
+        ///   Looks up a localized string similar to Não foi possível deletar o(s) registro(s).
         /// </summary>
         internal static string NaoDeletado {
             get {
@@ -97,7 +106,7 @@ namespace DddBasico.Infra.Persistencia.Mensagens {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Não foi possível inserir o registro.
+        ///   Looks up a localized string similar to Não foi possível inserir o(s) registro(s).
         /// </summary>
         internal static string NaoInserido {
             get {

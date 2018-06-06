@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Comandos\Comum\GuidIdsCmd.cs" />
     <Compile Include="Comandos\Comum\GuidIdCmd.cs" />
     <Compile Include="Comandos\UsuarioCmd\AtualizarCmd.cs" />
     <Compile Include="Comandos\UsuarioCmd\InserirCmd.cs" />

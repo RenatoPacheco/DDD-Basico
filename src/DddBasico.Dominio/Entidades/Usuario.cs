@@ -44,5 +44,33 @@ namespace DddBasico.Dominio.Entidades
         public string Email { get; set; }
 
         public string Senha { get; set; }
+
+        #region Operador -------------------------------------
+
+        public override bool Equals(object obj)
+        {
+            Usuario comparar = obj as Usuario;
+            return !object.Equals(comparar, null)
+                && this.GetHashCode() == comparar.GetHashCode();
+        }
+
+        public override int GetHashCode()
+        {
+            return string.Format("[{0}:{1}]", this.GetType(), this.Id).GetHashCode();
+        }
+
+        public static bool operator ==(Usuario a, Usuario b)
+        {
+            return object.Equals(a, null) && object.Equals(b, null)
+                || (!object.Equals(a, null) && !object.Equals(b, null) && a.Equals(b));
+        }
+
+        public static bool operator !=(Usuario a, Usuario b)
+        {
+            return !(object.Equals(a, null) && object.Equals(b, null)
+                || (!object.Equals(a, null) && !object.Equals(b, null) && a.Equals(b)));
+        }
+
+        #endregion
     }
 }

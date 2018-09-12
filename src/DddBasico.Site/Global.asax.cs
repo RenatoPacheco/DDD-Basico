@@ -13,6 +13,7 @@ namespace DddBasico.Site
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+            SimpleInjectorConfig.RegisterInject();
         }
     }
 }

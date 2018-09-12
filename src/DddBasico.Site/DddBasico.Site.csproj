@@ -38,7 +38,23 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CommonServiceLocator, Version=2.0.3.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CommonServiceLocator.2.0.3\lib\net47\CommonServiceLocator.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="SimpleInjector, Version=4.3.0.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SimpleInjector.4.3.0\lib\net45\SimpleInjector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SimpleInjector.Integration.Web, Version=4.3.0.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SimpleInjector.Integration.Web.4.3.0\lib\net40\SimpleInjector.Integration.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SimpleInjector.Integration.Web.Mvc, Version=4.3.0.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SimpleInjector.Integration.Web.Mvc.4.3.0\lib\net40\SimpleInjector.Integration.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -91,6 +107,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\SimpleInjectorConfig.cs" />
+    <Compile Include="App_Start\SimpleInjectorCustom\SimpleInjectorServiceLocatorAdapter.cs" />
+    <Compile Include="Auxiliares\ResolverConexao.cs" />
+    <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -113,6 +133,28 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DddBasico.Aplicacao\DddBasico.Aplicacao.csproj">
+      <Project>{df53b972-4eb7-41e2-adae-ea8e71262b77}</Project>
+      <Name>DddBasico.Aplicacao</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DddBasico.Auxiliares\DddBasico.Auxiliares.csproj">
+      <Project>{595b49e1-e236-4494-9126-7729b876f4e4}</Project>
+      <Name>DddBasico.Auxiliares</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DddBasico.Dominio\DddBasico.Dominio.csproj">
+      <Project>{62821c37-243f-4764-9845-8ac2505903fd}</Project>
+      <Name>DddBasico.Dominio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DddBasico.Infra.IdC\DddBasico.Infra.IdC.csproj">
+      <Project>{19e9a15e-9c41-4e17-b9d3-502e07d787a9}</Project>
+      <Name>DddBasico.Infra.IdC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DddBasico.Infra.Persistencia\DddBasico.Infra.Persistencia.csproj">
+      <Project>{5d2ecbc0-84e8-4eed-9ccc-6baacfcc61e1}</Project>
+      <Name>DddBasico.Infra.Persistencia</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

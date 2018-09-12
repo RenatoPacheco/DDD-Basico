@@ -7,30 +7,30 @@ using DddBasico.Auxiliares.Interfaces.Validacao;
 
 namespace DddBasico.Auxiliares.Validacao
 {
-    public class MensagemDeValidacao : IMensagemDeValidacao
+    public class MensagemValidacao : IMensagemValidacao
     {
-        private MensagemDeValidacao()
+        private MensagemValidacao()
         {
             this.Id = Guid.NewGuid();
             this.Data = DateTime.Now;
         }
 
-        public MensagemDeValidacao(string mensagem)
-            : this(mensagem, TipoDeMensagem.Erro, null) { }
+        public MensagemValidacao(string mensagem)
+            : this(mensagem, TipoMensagem.Erro, null) { }
 
-        public MensagemDeValidacao(
+        public MensagemValidacao(
             string mensagem,
             string referencia)
-            : this(mensagem, TipoDeMensagem.Erro, referencia) { }
+            : this(mensagem, TipoMensagem.Erro, referencia) { }
 
-        public MensagemDeValidacao(
+        public MensagemValidacao(
             string mensagem,
-            TipoDeMensagem tipo)
+            TipoMensagem tipo)
             : this(mensagem, tipo, null) { }
 
-        public MensagemDeValidacao(
+        public MensagemValidacao(
             string mensagem,
-            TipoDeMensagem tipo, 
+            TipoMensagem tipo, 
             string referencia)
             : this()
         {
@@ -47,13 +47,13 @@ namespace DddBasico.Auxiliares.Validacao
 
         public string Referencia { get; private set; }
 
-        public TipoDeMensagem Tipo { get; private set; }
+        public TipoMensagem Tipo { get; private set; }
 
         #region Operador -------------------------------------
 
         public override bool Equals(object obj)
         {
-            MensagemDeValidacao comparar = obj as MensagemDeValidacao;
+            MensagemValidacao comparar = obj as MensagemValidacao;
             return !object.Equals(comparar, null)
                 && this.GetHashCode() == comparar.GetHashCode();
         }
@@ -63,13 +63,13 @@ namespace DddBasico.Auxiliares.Validacao
             return string.Format("[{0}:{1}]", this.Id, this.GetType()).GetHashCode();
         }
 
-        public static bool operator ==(MensagemDeValidacao a, MensagemDeValidacao b)
+        public static bool operator ==(MensagemValidacao a, MensagemValidacao b)
         {
             return object.Equals(a, null) && object.Equals(b, null)
                 || (!object.Equals(a, null) && !object.Equals(b, null) && a.Equals(b));
         }
 
-        public static bool operator !=(MensagemDeValidacao a, MensagemDeValidacao b)
+        public static bool operator !=(MensagemValidacao a, MensagemValidacao b)
         {
             return !(object.Equals(a, null) && object.Equals(b, null)
                 || (!object.Equals(a, null) && !object.Equals(b, null) && a.Equals(b)));

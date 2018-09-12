@@ -1,11 +1,11 @@
 ﻿using System;
+using System.Text;
 using System.Linq;
 using System.Reflection;
 using System.Linq.Expressions;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Text;
 using System.Text.RegularExpressions;
+using System.ComponentModel.DataAnnotations;
 
 namespace DddBasico.Auxiliares.Extensoes
 {
@@ -102,25 +102,7 @@ namespace DddBasico.Auxiliares.Extensoes
 
             return null;
         }
-
-        public static string[] PropExtensoLista(this Expression expressao)
-        {
-            IList<string> propriedades = new List<string>();
-            NewArrayExpression lista = expressao as NewArrayExpression;
-
-            if (!object.Equals(lista, null))
-            {
-                foreach (Expression body in lista.Expressions)
-                {
-                    propriedades.Add(body.PropExtenso());
-                }
-
-                return propriedades.ToArray();
-            }
-
-            throw new Exception("Deve ser indicado uma lista de propriedades ex: x => new[] { x.P1, x.P2 }");
-        }
-
+        
         public static string PropExtensoComTrilha(this Expression objeto)
         {
             string nome = objeto.ToString();
@@ -139,24 +121,6 @@ namespace DddBasico.Auxiliares.Extensoes
             }
 
             return null;
-        }
-
-        public static string[] PropExtensoComTrilhaLista(this Expression objeto)
-        {
-            IList<string> propriedades = new List<string>();
-            NewArrayExpression lista = objeto as NewArrayExpression;
-
-            if (!object.Equals(lista, null))
-            {
-                foreach (Expression body in lista.Expressions)
-                {
-                    propriedades.Add(body.PropExtensoComTrilha());
-                }
-
-                return propriedades.ToArray();
-            }
-
-            throw new Exception("Deve ser indicado uma lista de propriedades ex: x => new[] { x.P1, x.P2 }");
         }
     }
 }

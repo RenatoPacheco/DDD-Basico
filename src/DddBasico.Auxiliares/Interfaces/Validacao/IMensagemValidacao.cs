@@ -3,7 +3,7 @@ using DddBasico.Auxiliares.Validacao;
 
 namespace DddBasico.Auxiliares.Interfaces.Validacao
 {
-    public interface IMensagemDeValidacao
+    public interface IMensagemValidacao
     {
         Guid Id { get; }
 
@@ -13,6 +13,6 @@ namespace DddBasico.Auxiliares.Interfaces.Validacao
 
         string Referencia { get; }
 
-        TipoDeMensagem Tipo { get; }
+        TipoMensagem Tipo { get; }
     }
 }

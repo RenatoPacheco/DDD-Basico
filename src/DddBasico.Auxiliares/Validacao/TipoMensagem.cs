@@ -1,6 +1,6 @@
 ﻿namespace DddBasico.Auxiliares.Validacao
 {
-    public enum TipoDeMensagem
+    public enum TipoMensagem
     {
         Erro,
         Sucesso,

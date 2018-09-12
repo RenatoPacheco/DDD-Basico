@@ -66,7 +66,7 @@ namespace DddBasico.Api.Controllers
             });
         }
 
-        [HttpPut, Route("{id}")]
+        [HttpPut, HttpPatch, Route("{id}")]
         public Task<HttpResponseMessage> Put([FromUri]Guid? id, [FromBody]AtualizarModel parametros)
         {
             InvocarSeNulo<AtualizarModel>(ref parametros);
@@ -81,23 +81,7 @@ namespace DddBasico.Api.Controllers
 
             return CriarRespostaTask(HttpStatusCode.OK);
         }
-
-        [HttpPatch, Route("{id}")]
-        public Task<HttpResponseMessage> Patch([FromUri]Guid? id, [FromBody]AtualizarModel parametros)
-        {
-            InvocarSeNulo<AtualizarModel>(ref parametros);
-            parametros.Id = id;
-            Usuario resultado = null;
-
-            if (this.EhValido())
-            {
-                resultado = this._appUsuario.Atualizar(parametros);
-                this.Validar(this._appUsuario);
-            }
-
-            return CriarRespostaTask(HttpStatusCode.OK);
-        }
-
+        
         [HttpDelete, Route("{id}")]
         public Task<HttpResponseMessage> Delete([FromUri]DeletarCmd parametros)
         {

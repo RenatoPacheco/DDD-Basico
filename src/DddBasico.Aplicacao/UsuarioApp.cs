@@ -83,5 +83,17 @@ namespace DddBasico.Aplicacao
 
             return resultado;
         }
+
+
+        public Usuario[] Filtrar(FiltrarCmd comando)
+        {
+            this.Notificacoes.Limpar();
+            Usuario[] resultado = new Usuario[] { };
+
+            resultado = this._servUsuario.Filtrar(comando);
+            this.Validar(this._servUsuario);
+
+            return resultado;
+        }
     }
 }

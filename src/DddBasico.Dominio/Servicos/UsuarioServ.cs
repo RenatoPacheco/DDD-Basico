@@ -79,7 +79,7 @@ namespace DddBasico.Dominio.Servicos
         public Usuario[] Listar()
         {
             this.Notificacoes.Limpar();
-            Usuario[] resultado = null;
+            Usuario[] resultado = new Usuario[] { };
 
             resultado = this._repUsuario.Listar();
             this.Validar(this._repUsuario);
@@ -104,6 +104,20 @@ namespace DddBasico.Dominio.Servicos
                     if (!this.Validar(this._repUsuario))
                         comando.Desfazer(ref resultado);
                 }
+            }
+
+            return resultado;
+        }
+        
+        public Usuario[] Filtrar(FiltrarCmd comando)
+        {
+            this.Notificacoes.Limpar();
+            Usuario[] resultado = new Usuario[] { };
+
+            if (this.Validar(comando))
+            {
+                resultado = this._repUsuario.Filtrar(comando);
+                this.Validar(this._repUsuario);
             }
 
             return resultado;

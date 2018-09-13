@@ -15,5 +15,7 @@ namespace DddBasico.Dominio.Interfaces.Servicos
         Usuario[] Listar();
 
         Usuario Deletar(DeletarCmd comando);
+        
+        Usuario[] Filtrar(FiltrarCmd comando);
     }
 }

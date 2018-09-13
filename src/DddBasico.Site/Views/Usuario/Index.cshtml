@@ -1,0 +1,26 @@
+﻿@model DddBasico.Site.Models.UsuarioModel.FiltrarResult
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Nome</th>
+            <th>E-mail</th>
+        </tr>
+    </thead>
+    <tbody>
+        @while(Model.ProximoItem())
+        {
+            <tr>
+                <td>@Html.Raw(Model.ObterIndice())</td>
+                <td>@Html.Raw(Model.ObterNome())</td>
+                <td>@Html.Raw(Model.ObterEmail())</td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -27,5 +27,19 @@ namespace DddBasico.Infra.Persistencia.Repositorios
 
             return resultado;
         }
+
+        public Usuario[] Filtrar(Dominio.Comandos.UsuarioCmd.FiltrarCmd comando)
+        {
+            this.Notificacoes.Limpar();
+            Usuario[] resultado = this._conexao.Sessao.Query<Usuario>(@"
+                    SELECT TOP 1000 * 
+                    FROM Usuario AS usu",
+                transaction: this._conexao.Transicao).ToArray();
+
+            if (resultado.Equals(0))
+                this.Notificacoes.Adicionar(SqlMsg.NaoEncontrado);
+
+            return resultado;
+        }
     }
 }

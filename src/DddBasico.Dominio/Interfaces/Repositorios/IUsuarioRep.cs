@@ -7,5 +7,6 @@ namespace DddBasico.Dominio.Interfaces.Repositorios
     public interface IUsuarioRep : Comum.IRepositorio<Usuario, Guid>
     {
 
+        Usuario[] Filtrar(Comandos.UsuarioCmd.FiltrarCmd comando);
     }
 }

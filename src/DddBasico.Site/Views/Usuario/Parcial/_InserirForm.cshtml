@@ -1,0 +1,21 @@
+﻿@model DddBasico.Dominio.Comandos.UsuarioCmd.InserirCmd
+
+<form method="post">
+    <div class="form-group">
+        @Html.LabelFor(x => x.Nome)
+        @Html.TextBoxFor(x => x.Nome, new { @class = "form-control", @placeholder = "Informe o nome" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(x => x.Sobrenome)
+        @Html.TextBoxFor(x => x.Sobrenome, new { @class = "form-control", @placeholder = "Informe o sobrenome" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(x => x.Email)
+        @Html.TextBoxFor(x => x.Email, new { @class = "form-control", @placeholder = "Informe o e-mail" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(x => x.ConfirmaEmail)
+        @Html.TextBoxFor(x => x.ConfirmaEmail, new { @class = "form-control", @placeholder = "Informe o e-mail" })
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+</form>
